@@ -1,5 +1,12 @@
+import { Suspense } from 'react';
+import { Outlet } from 'react-router';
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <Suspense>
+      <Outlet />
+    </Suspense>
+  );
 };
 
 export default App;
