@@ -2,23 +2,29 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Eye, EyeClosed, KeyRound, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 
+import { ILoginFormValues, useAuth } from '@entities/auth';
+
+import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { Input } from '@shared/ui/Input';
 
 import { LoginSchema } from '../model/loginSchema';
-import { ILoginFormData } from '../model/loginTypes';
 
 import styles from './LoginForm.module.scss';
 
 export const LoginForm = () => {
   const [isPasswordHidden, setIsPasswordHidden] = useState(false);
 
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const {
     register: registerInput,
     handleSubmit,
     formState: { errors },
-  } = useForm<ILoginFormData>({
+  } = useForm<ILoginFormValues>({
     mode: 'onSubmit',
     resolver: zodResolver(LoginSchema),
   });
@@ -27,8 +33,9 @@ export const LoginForm = () => {
     setIsPasswordHidden((prev) => !prev);
   };
 
-  const onLogin: SubmitHandler<ILoginFormData> = (data) => {
-    return data;
+  const onLogin: SubmitHandler<ILoginFormValues> = async (data) => {
+    await login(data);
+    navigate(ROUTES.appRoute);
   };
 
   return (

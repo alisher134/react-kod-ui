@@ -1,6 +1,7 @@
 @use '@app/styles/_variables' as *;
 
 .button {
+  position: relative;
   outline: none;
   border: none;
   border-radius: 10px;

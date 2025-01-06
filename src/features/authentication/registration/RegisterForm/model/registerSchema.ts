@@ -1,8 +1,8 @@
 import { ZodType, z } from 'zod';
 
-import { IRegisterFormData } from './registerTypes';
+import { IRegisterFormValues } from '@entities/auth';
 
-export const RegisterSchema: ZodType<IRegisterFormData> = z.object({
+export const RegisterSchema: ZodType<IRegisterFormValues> = z.object({
   email: z.string().email(),
   firstName: z.string().min(3),
   lastName: z.string().min(3),
