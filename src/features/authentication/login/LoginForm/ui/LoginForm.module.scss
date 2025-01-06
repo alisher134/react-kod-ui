@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 26px;
+
+  .title {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 36px;
+  }
+
+  .password {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+  }
+}

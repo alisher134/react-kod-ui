@@ -1,0 +1,17 @@
+@use '@app/styles/_variables' as *;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .action {
+    color: $links;
+    text-decoration: none;
+    transition: $primary-transition;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

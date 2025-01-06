@@ -6,7 +6,7 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["extend", "include", "use"]
+        "ignoreAtRules": ["extend", "include", "use", "import"]
       }
     ],
     "order/properties-order": [

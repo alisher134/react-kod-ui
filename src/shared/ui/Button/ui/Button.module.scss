@@ -1,0 +1,24 @@
+@use '@app/styles/_variables' as *;
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  color: $white;
+  transition: $primary-transition;
+  cursor: pointer;
+
+  &.primary {
+    background: $primary;
+
+    &:hover {
+      background: $primary-hover;
+    }
+  }
+
+  &.full {
+    padding: 16px 32px;
+    width: 100%;
+  }
+}
