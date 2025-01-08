@@ -1,3 +1,3 @@
 export { authService } from './api/authService';
-export type { ILoginFormValues, IRegisterFormValues } from './model/authTypes';
-export { useAuth } from './model/useAuth';
+export { useAuth } from './model/hooks/useAuth';
+export type { ILoginFormValues, IRegisterFormValues } from './model/types/authTypes';

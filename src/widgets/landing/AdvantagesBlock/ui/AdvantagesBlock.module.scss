@@ -1,0 +1,50 @@
+@use '@app/styles/_variables' as *;
+
+.advantages {
+  padding: 100px 0;
+  background-color: $gray-dark;
+
+  .container {
+    margin: 0 auto;
+    max-width: $layout-max-width;
+
+    .caption {
+      color: $secondary;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .title {
+      color: $white;
+      font-weight: 400;
+      font-size: 46px;
+    }
+
+    .description {
+      max-width: 780px;
+      color: $white;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .advantages-container {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+
+      .advantage {
+        gap: 30px;
+        padding: 32px;
+        border-radius: 10px;
+        background: $violet-dark;
+
+        .title {
+          max-width: 280px;
+          color: $white;
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

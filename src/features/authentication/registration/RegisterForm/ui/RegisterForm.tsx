@@ -2,7 +2,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { CircleUserRound, Eye, EyeClosed, KeyRound, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 
 import { IRegisterFormValues, useAuth } from '@entities/auth';
@@ -10,7 +9,6 @@ import { IRegisterFormValues, useAuth } from '@entities/auth';
 import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { Input } from '@shared/ui/Input';
-import { errorHandler } from '@shared/utils';
 
 import { RegisterSchema } from '../model/registerSchema';
 
@@ -36,12 +34,8 @@ export const RegisterForm = () => {
   };
 
   const onRegister: SubmitHandler<IRegisterFormValues> = async (data) => {
-    try {
-      await register(data);
-      navigate(ROUTES.appRoute);
-    } catch (error) {
-      toast.error(errorHandler(error));
-    }
+    await register(data);
+    navigate(ROUTES.appRoute);
   };
 
   return (

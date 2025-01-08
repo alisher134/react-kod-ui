@@ -1,5 +1,13 @@
+import { AdvantagesBlock } from '@widgets/landing/AdvantagesBlock';
+import { IntroductionBlock } from '@widgets/landing/IntroductionBlock';
+
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return (
+    <>
+      <IntroductionBlock />
+      <AdvantagesBlock />
+    </>
+  );
 };
 
 export default MainPage;

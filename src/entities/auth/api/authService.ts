@@ -1,7 +1,7 @@
 import { axiosInstance } from '@shared/api';
 import { API_CONFIG } from '@shared/config/api/apiConfig';
 
-import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from '../model/authTypes';
+import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from '../model/types/authTypes';
 
 export const authService = {
   async login(data: ILoginFormValues) {

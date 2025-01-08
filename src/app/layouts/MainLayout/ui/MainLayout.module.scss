@@ -1,0 +1,7 @@
+@use '@app/styles/_variables' as *;
+
+.wrapper {
+  > main {
+    min-height: 100vh;
+  }
+}

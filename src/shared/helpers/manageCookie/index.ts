@@ -1,1 +1,1 @@
-export { getAccessToken, removeAccessToken, saveAccessToken } from './manageCookie';
+export { getFromCookie, removeFromCookie, saveToCookie } from './manageCookie';

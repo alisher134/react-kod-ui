@@ -1,0 +1,48 @@
+@use '@app/styles/_variables' as *;
+
+.introduction {
+  background-color: $gray-dark;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px 0 70px;
+    max-width: $layout-max-width;
+
+    .chips {
+      display: flex;
+      gap: 16px;
+
+      .chip {
+        padding: 6px 12px;
+        border: 1px solid $gray-stroke;
+        border-radius: 17px;
+        font-size: 16px;
+      }
+    }
+
+    .title {
+      color: $white;
+      line-height: 100%;
+      font-weight: 700;
+      font-size: 54px;
+
+      span {
+        background: linear-gradient(90deg, #d77be5 33%, #be63e5 66%, #6c38cc);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .subtitle {
+      color: $white;
+      font-size: 18px;
+    }
+
+    .link {
+      margin-top: 50px;
+    }
+  }
+}

@@ -10,6 +10,8 @@ import { MainPage as LandingMainPage } from '@pages/landing/MainPage';
 
 import { ROUTES } from '@shared/config/router';
 
+import { UnAuthRoute } from '../ui/UnAuthRoute';
+
 export const router = createBrowserRouter([
   {
     path: ROUTES.appRoute,
@@ -26,7 +28,11 @@ export const router = createBrowserRouter([
       },
       {
         path: ROUTES.auth.route,
-        element: <AuthLayout />,
+        element: (
+          <UnAuthRoute>
+            <AuthLayout />
+          </UnAuthRoute>
+        ),
         children: [
           {
             path: ROUTES.auth.login.route,
