@@ -1,0 +1,43 @@
+@use '@app/styles/_variables' as *;
+
+.wrapper {
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: $layout-max-width;
+
+    .text {
+      z-index: 10;
+      display: table;
+      background: $gradient;
+      background-clip: text;
+      line-height: 100%;
+      font-weight: 700;
+      font-size: 400px;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title {
+      margin: 8px 0 0;
+      line-height: 150%;
+      font-weight: 400;
+      font-size: 36px;
+    }
+
+    .description {
+      margin: 0;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .link {
+      display: block;
+      margin: 42px auto 0;
+    }
+  }
+}
