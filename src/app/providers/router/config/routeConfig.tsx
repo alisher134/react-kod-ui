@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router';
 import App from '@app/App';
 import { AuthLayout } from '@app/layouts/AuthLayout';
 import { MainLayout } from '@app/layouts/MainLayout';
+import { StudentLayout } from '@app/layouts/StudentLayout';
 
 import { Error404Page } from '@pages/Error404Page';
 import { LoginPage } from '@pages/auth/LoginPage';
@@ -11,6 +12,7 @@ import { MainPage as LandingMainPage } from '@pages/landing/MainPage';
 
 import { ROUTES } from '@shared/config/router';
 
+import { AuthRoute } from '../ui/AuthRoute';
 import { UnAuthRoute } from '../ui/UnAuthRoute';
 
 export const router = createBrowserRouter([
@@ -46,6 +48,24 @@ export const router = createBrowserRouter([
           {
             path: ROUTES.auth.register.route,
             element: <RegisterPage />,
+          },
+        ],
+      },
+      {
+        path: ROUTES.student.route,
+        element: (
+          <AuthRoute>
+            <StudentLayout />
+          </AuthRoute>
+        ),
+        children: [
+          {
+            path: ROUTES.student.courses.route,
+            element: <div>student</div>,
+          },
+          {
+            path: ROUTES.student.my_profile.route,
+            element: <div>student</div>,
           },
         ],
       },

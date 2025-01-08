@@ -3,18 +3,33 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  gap: 10px;
   color: inherit;
   text-decoration: none;
 
-  .img {
-    width: 36px;
-    height: 36px;
+  &.sm {
+    .img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 18px;
+      font-family: Karla, serif;
+    }
   }
 
-  .name {
-    font-weight: 700;
-    font-size: 22px;
-    font-family: Karla, serif;
+  &.md {
+    .img {
+      width: 34px;
+      height: 34px;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 22px;
+      font-family: Karla, serif;
+    }
   }
 }

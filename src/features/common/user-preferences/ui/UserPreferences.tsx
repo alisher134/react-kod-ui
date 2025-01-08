@@ -34,13 +34,13 @@ export const UserPreferences = ({ className }: UserPreferencesProps) => {
       </div>
       <ul className={styles.dropdown}>
         <li className={styles.item}>
-          <Link to={ROUTES.auth.login.page} className={styles.link}>
+          <Link to={ROUTES.student.courses.page} className={styles.link}>
             Обучение
           </Link>
         </li>
         {isLoggedIn && (
           <li className={styles.item}>
-            <Link to={ROUTES.auth.login.page} className={styles.link}>
+            <Link to={ROUTES.student.my_profile.page} className={styles.link}>
               Профиль
             </Link>
           </li>

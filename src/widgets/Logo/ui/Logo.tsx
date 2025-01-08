@@ -9,11 +9,12 @@ import styles from './Logo.module.scss';
 
 interface LogoProps {
   className?: string;
+  size?: 'md' | 'sm';
 }
 
-export const Logo = ({ className }: LogoProps) => {
+export const Logo = ({ className, size = 'md' }: LogoProps) => {
   return (
-    <Link to={ROUTES.appRoute} className={clsx(styles.logo, className)}>
+    <Link to={ROUTES.appRoute} className={clsx(styles.logo, className, styles[size])}>
       <img src={icon} alt="logo" className={styles.img} />
       <span className={styles.name}>{APP_NAME}</span>
     </Link>
