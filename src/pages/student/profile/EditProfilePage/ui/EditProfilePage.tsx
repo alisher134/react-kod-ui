@@ -1,3 +1,5 @@
+import { EditProfileForm } from '@features/profile/EditProfileForm';
+
 import styles from './EditProfilePage.module.scss';
 
 const EditProfilePage = () => {
@@ -5,6 +7,8 @@ const EditProfilePage = () => {
     <section className={styles.profile}>
       <div className={styles.container}>
         <h1 className={styles.title}>Мой профиль</h1>
+
+        <EditProfileForm />
       </div>
     </section>
   );

@@ -6,7 +6,10 @@ export const API_CONFIG = {
     REFRESH: '/auth/refresh',
     LOGOUT: '/auth/logout',
   },
-  USER: {
-    PROFILE: '/users/profile',
+  PROFILE: {
+    MY: '/users/profile',
+  },
+  MEDIA: {
+    UPLOAD: '/media',
   },
 };

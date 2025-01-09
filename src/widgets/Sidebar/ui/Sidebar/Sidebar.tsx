@@ -7,16 +7,16 @@ import { sidebarMenuData } from '@widgets/Sidebar/model/data/sidebarData';
 import { useAuth } from '@entities/auth';
 import { useProfile } from '@entities/profile';
 
-import avatarIcon from '@shared/assets/icons/avatar.svg';
 import { ROUTES } from '@shared/config/router';
 
 import { SidebarMenuList } from '../SidebarMenuList/SidebarMenuList';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
   const navigate = useNavigate();
-  const { profile } = useProfile();
+  const { profile, isLoading } = useProfile();
   const { logout } = useAuth();
 
   const onLogout = async () => {
@@ -26,30 +26,31 @@ export const Sidebar = () => {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.top}>
-        <div className={styles['toggle-button']}>
-          <button className={styles.button}>
-            <X size={24} />
-          </button>
-        </div>
-
-        <div className={styles['user-info']}>
-          <div className={styles.image}>
-            <img src={profile?.avatarPath ?? avatarIcon} alt={profile?.firstName} />
+      <div className={styles.container}>
+        <div className={styles.top}>
+          <div className={styles['toggle-button']}>
+            <button className={styles.button}>
+              <X size={24} />
+            </button>
           </div>
-          <div className={styles.name}>{profile?.firstName}</div>
+
+          <UserInfo
+            firstName={profile?.firstName}
+            avatarPath={profile?.avatarPath}
+            isLoading={isLoading}
+          />
         </div>
-      </div>
 
-      <SidebarMenuList menu={sidebarMenuData} />
+        <SidebarMenuList menu={sidebarMenuData} />
 
-      <div className={styles.bottom}>
-        <button onClick={onLogout} className={styles['logout-button']}>
-          <LogOut className={styles.icon} />
-          <span>Выйти</span>
-        </button>
+        <div className={styles.bottom}>
+          <button onClick={onLogout} className={styles['logout-button']}>
+            <LogOut className={styles.icon} />
+            <span>Выйти</span>
+          </button>
 
-        <Logo size="sm" className={styles.logo} />
+          <Logo size="sm" className={styles.logo} />
+        </div>
       </div>
     </aside>
   );

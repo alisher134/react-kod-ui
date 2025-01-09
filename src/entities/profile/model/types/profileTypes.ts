@@ -6,6 +6,7 @@ export interface IProfile {
   firstName: string;
   lastName: string;
   avatarPath: string | null;
+  description: string | null;
   role: EProfileRole;
 }
 

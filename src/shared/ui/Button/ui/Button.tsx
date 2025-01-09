@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonType {
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   variant?: TButtonVariant;
-  size: TButtonSize;
+  size?: TButtonSize;
   isLink?: boolean;
 }
 
@@ -17,7 +17,7 @@ export const Button = ({
   className,
   prefix,
   suffix,
-  size,
+  size = 'md',
   variant = 'primary',
   isLink = false,
   ...props

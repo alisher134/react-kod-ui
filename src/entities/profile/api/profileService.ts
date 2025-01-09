@@ -5,6 +5,6 @@ import { IProfile } from '../model/types/profileTypes';
 
 export const profileService = {
   async getProfile() {
-    return await axiosInstance.get<IProfile>(API_CONFIG.USER.PROFILE);
+    return await axiosInstance.get<IProfile>(API_CONFIG.PROFILE.MY);
   },
 };
