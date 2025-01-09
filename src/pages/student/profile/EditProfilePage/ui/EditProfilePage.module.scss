@@ -1,0 +1,12 @@
+@use '@app/styles/_variables' as *;
+
+.profile {
+  .container {
+    .title {
+      margin-bottom: 32px;
+      color: $gray-light;
+      font-weight: 400;
+      font-size: 36px;
+    }
+  }
+}

@@ -25,7 +25,7 @@ export const ROUTES = {
       route: 'profile/my',
       page: '/student/profile/my',
       edit: {
-        route: 'edit',
+        route: 'profile/my/edit',
         page: '/student/profile/my/edit',
       },
     },
