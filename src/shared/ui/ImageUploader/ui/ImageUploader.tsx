@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from 'clsx';
 import { Image, Upload } from 'lucide-react';
 import { ChangeEvent, forwardRef, useCallback } from 'react';
@@ -12,7 +11,7 @@ interface ImageUploaderProps {
   className?: string;
   error?: FieldError;
   image?: string | null;
-  onChange: (...event: any[]) => void;
+  onChange: (url: string) => void;
 }
 
 export const ImageUploader = forwardRef<HTMLInputElement, ImageUploaderProps>(

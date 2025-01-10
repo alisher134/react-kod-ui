@@ -84,6 +84,7 @@ export const EditProfileForm = () => {
             />
           </div>
         </div>
+        {/* TODO:Вместо Input сделать для description Textarea */}
         <Input
           {...register('description', { required: 'description is required' })}
           error={errors.description}
