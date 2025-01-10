@@ -3,6 +3,8 @@ import toast from 'react-hot-toast';
 
 import { authService } from '@entities/auth/api/authService';
 
+import i18n from '@shared/config/i18n/i18n';
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ETokens } from '@shared/constants';
 import {
   getFromCookie,
@@ -19,7 +21,7 @@ export const useAuth = () => {
     mutationFn: (data: ILoginFormValues) => authService.login(data),
     onSuccess({ data }) {
       saveToCookie(ETokens.ACCESS_TOKEN, data.accessToken);
-      toast.success('Вы успешно вошли');
+      toast.success(i18n.t(ETranslation.TOAST_AUTH_LOGIN_SUCCESS));
     },
     onError(error) {
       toast.error(errorHandler(error));
@@ -31,7 +33,7 @@ export const useAuth = () => {
     mutationFn: (data: IRegisterFormValues) => authService.register(data),
     onSuccess({ data }) {
       saveToCookie(ETokens.ACCESS_TOKEN, data.accessToken);
-      toast.success('Вы успешно зарегистрировались');
+      toast.success(i18n.t(ETranslation.TOAST_AUTH_REGISTER_SUCCESS));
     },
     onError(error) {
       toast.error(errorHandler(error));
@@ -43,7 +45,7 @@ export const useAuth = () => {
     mutationFn: () => authService.logout(),
     onSuccess() {
       removeFromCookie(ETokens.ACCESS_TOKEN);
-      toast.success('Вы успешно вышли');
+      toast.success(i18n.t(ETranslation.TOAST_AUTH_LOGOUT_SUCCESS));
     },
     onError(error) {
       toast.error(errorHandler(error));

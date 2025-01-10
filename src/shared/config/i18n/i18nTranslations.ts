@@ -1,6 +1,14 @@
 export enum ETranslation {
   LANGUAGE = 'language',
 
+  NOT_FOUND_TITLE = 'not.found.title',
+  NOT_FOUND_SUBTITLE = 'not.found.subtitle',
+  NOT_FOUND_LINK = 'not.found.link',
+
+  TOAST_AUTH_LOGIN_SUCCESS = 'toast.auth.login.success',
+  TOAST_AUTH_REGISTER_SUCCESS = 'toast.auth.register.success',
+  TOAST_AUTH_LOGOUT_SUCCESS = 'toast.auth.logout.success',
+
   VALIDATION_EMAIL_REQUIRED = 'validation.email.required',
   VALIDATION_EMAIL_INVALID = 'validation.email.invalid',
   VALIDATION_PASSWORD_REQUIRED = 'validation.password.required',
