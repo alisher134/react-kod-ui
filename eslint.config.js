@@ -29,6 +29,7 @@ export default tseslint.config(
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-var-requires': 'off',
+      'no-useless-catch': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

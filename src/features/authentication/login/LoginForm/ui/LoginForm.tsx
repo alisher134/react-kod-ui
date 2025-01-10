@@ -2,10 +2,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Eye, EyeClosed, KeyRound, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import { ILoginFormValues, useAuth } from '@entities/auth';
 
+import { I18Namespace } from '@shared/config/i18n';
+import { EAuth } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { Input } from '@shared/ui/Input';
@@ -18,6 +21,8 @@ export const LoginForm = () => {
   const [isPasswordHidden, setIsPasswordHidden] = useState(false);
 
   const { login } = useAuth();
+  const { t } = useTranslation(I18Namespace.auth);
+
   const navigate = useNavigate();
 
   const {
@@ -40,21 +45,21 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onLogin)} className={styles.wrapper}>
-      <span className={styles.title}>Вход</span>
+      <span className={styles.title}>{t(EAuth.LOGIN_TITLE)}</span>
 
       <Input
-        {...registerInput('email', { required: 'Email is required!' })}
+        {...registerInput('email')}
         size="full"
-        placeholder="Email"
+        placeholder={t(EAuth.FORM_EMAIL_PLACEHOLDER)}
         prefix={<Mail size={22} />}
         error={errors.email}
       />
 
       <Input
-        {...registerInput('password', { required: 'Password is required!' })}
+        {...registerInput('password')}
         size="full"
         type={isPasswordHidden ? 'text' : 'password'}
-        placeholder="Пароль"
+        placeholder={t(EAuth.FORM_PASSWORD_PLACEHOLDER)}
         prefix={<KeyRound size={22} />}
         suffix={
           <button type="button" onClick={handleShowPassword} className={styles.password}>
@@ -64,7 +69,7 @@ export const LoginForm = () => {
         error={errors.password}
       />
 
-      <Button size="full">Войти</Button>
+      <Button size="full">{t(EAuth.LOGIN_SUBMIT)}</Button>
     </form>
   );
 };

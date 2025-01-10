@@ -2,10 +2,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { CircleUserRound, Eye, EyeClosed, KeyRound, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import { IRegisterFormValues, useAuth } from '@entities/auth';
 
+import { I18Namespace } from '@shared/config/i18n';
+import { EAuth } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { Input } from '@shared/ui/Input';
@@ -19,6 +22,7 @@ export const RegisterForm = () => {
 
   const navigate = useNavigate();
   const { register } = useAuth();
+  const { t } = useTranslation(I18Namespace.auth);
 
   const {
     register: registerInput,
@@ -40,26 +44,26 @@ export const RegisterForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onRegister)} className={styles.wrapper}>
-      <span className={styles.title}>Создание аккаунта</span>
+      <span className={styles.title}>{t(EAuth.REGISTER_TITLE)}</span>
 
       <Input
         {...registerInput('email', { required: 'Email is required!' })}
         size="full"
-        placeholder="Email"
+        placeholder={t(EAuth.FORM_EMAIL_PLACEHOLDER)}
         prefix={<Mail size={22} />}
         error={errors.email}
       />
       <Input
         {...registerInput('firstName', { required: 'FirstName is required!' })}
         size="full"
-        placeholder="Имя"
+        placeholder={t(EAuth.FORM_FIRST_NAME_PLACEHOLDER)}
         prefix={<CircleUserRound size={22} />}
         error={errors.firstName}
       />
       <Input
         {...registerInput('lastName', { required: 'LastName is required!' })}
         size="full"
-        placeholder="Фамилия"
+        placeholder={t(EAuth.FORM_LAST_NAME_PLACEHOLDER)}
         prefix={<CircleUserRound size={22} />}
         error={errors.lastName}
       />
@@ -67,7 +71,7 @@ export const RegisterForm = () => {
         {...registerInput('password', { required: 'Password is required!' })}
         size="full"
         type={isPasswordHidden ? 'text' : 'password'}
-        placeholder="Пароль"
+        placeholder={t(EAuth.FORM_PASSWORD_PLACEHOLDER)}
         prefix={<KeyRound size={22} />}
         suffix={
           <button type="button" onClick={handleShowPassword} className={styles.password}>
@@ -77,7 +81,7 @@ export const RegisterForm = () => {
         error={errors.password}
       />
 
-      <Button size="full">Зарегистрироваться</Button>
+      <Button size="full">{t(EAuth.REGISTER_SUBMIT)}</Button>
     </form>
   );
 };

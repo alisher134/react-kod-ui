@@ -1,9 +1,12 @@
+import { Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { I18Namespace } from '@shared/config/i18n';
-import { Translation } from '@shared/config/i18n/i18nTranslations';
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 
 import { ELanguages } from '../model/changingLanguage';
+
+import styles from './LanguageSwitcher.module.scss';
 
 export const LanguageSwitcher = () => {
   const { t, i18n } = useTranslation(I18Namespace.translation);
@@ -13,5 +16,10 @@ export const LanguageSwitcher = () => {
     i18n.changeLanguage(newLang);
   };
 
-  return <button onClick={changeLanguage}>{t(Translation.LANGUAGE)}</button>;
+  return (
+    <button onClick={changeLanguage} className={styles.switch}>
+      <Globe className={styles.icon} />
+      <span>{t(ETranslation.LANGUAGE)}</span>
+    </button>
+  );
 };

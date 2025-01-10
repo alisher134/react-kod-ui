@@ -7,7 +7,7 @@ import { useAuth } from '@entities/auth';
 import { useProfile } from '@entities/profile';
 
 import { I18Namespace } from '@shared/config/i18n';
-import { Translation } from '@shared/config/i18n/i18nTranslations';
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 
 import styles from './UserPreferences.module.scss';
@@ -34,30 +34,30 @@ export const UserPreferences = ({ className }: UserPreferencesProps) => {
       <div className={styles['avatar-container']}>
         <>
           <CircleUser />
-          <span>{isLoggedIn ? profile?.firstName : t(Translation.LOGIN)}</span>
+          <span>{isLoggedIn ? profile?.firstName : t(ETranslation.LOGIN)}</span>
         </>
       </div>
       <ul className={styles.dropdown}>
         <li className={styles.item}>
           <Link to={ROUTES.student.courses.page} className={styles.link}>
-            {t(Translation.EDUCATION)}
+            {t(ETranslation.EDUCATION)}
           </Link>
         </li>
         {isLoggedIn && (
           <li className={styles.item}>
             <Link to={ROUTES.student.my_profile.page} className={styles.link}>
-              {t(Translation.PROFILE)}
+              {t(ETranslation.PROFILE)}
             </Link>
           </li>
         )}
         <li className={styles.item}>
           {isLoggedIn ? (
             <button onClick={onLogout} className={styles.button}>
-              {t(Translation.LOGOUT)}
+              {t(ETranslation.LOGOUT)}
             </button>
           ) : (
             <Link to={ROUTES.auth.login.page} className={styles.link}>
-              {t(Translation.SIGNIN)}
+              {t(ETranslation.SIGNIN)}
             </Link>
           )}
         </li>
