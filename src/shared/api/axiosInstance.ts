@@ -29,10 +29,11 @@ axiosInstance.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
+    const accessToken = getFromCookie(ETokens.ACCESS_TOKEN);
+    if (!accessToken) return null;
+
     if (
-      (error?.response?.status === 401 ||
-        errorHandler(error) === 'jwt expired' ||
-        errorHandler(error) === 'jwt must be provided') &&
+      (errorHandler(error) === 'jwt expired' || errorHandler(error) === 'jwt must be provided') &&
       error.config &&
       !error.config._isRetry
     ) {
@@ -40,14 +41,9 @@ axiosInstance.interceptors.response.use(
       try {
         await authService.refreshToken();
         return axiosInstance.request(originalRequest);
-      } catch (error) {
-        if (
-          errorHandler(error) === 'jwt expired' ||
-          errorHandler(error) === 'Refresh token not passed'
-        ) {
-          authService.logout();
-          removeFromCookie(ETokens.ACCESS_TOKEN);
-        }
+      } catch {
+        authService.logout();
+        removeFromCookie(ETokens.ACCESS_TOKEN);
       }
     }
 
