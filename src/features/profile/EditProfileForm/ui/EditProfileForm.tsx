@@ -9,6 +9,7 @@ import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { ImageUploader } from '@shared/ui/ImageUploader';
 import { Input } from '@shared/ui/Input';
+import { Textarea } from '@shared/ui/Textarea';
 
 import { useEditProfile } from '../model/hooks/useEditProfile';
 import { EditProfileSchema } from '../model/schema/editProfileSchema';
@@ -84,12 +85,10 @@ export const EditProfileForm = () => {
             />
           </div>
         </div>
-        {/* TODO:Вместо Input сделать для description Textarea */}
-        <Input
+        <Textarea
           {...register('description', { required: 'description is required' })}
+          placeholder="О себе"
           error={errors.description}
-          placeholder="о себе"
-          size="full"
           className={styles.description}
         />
       </div>
