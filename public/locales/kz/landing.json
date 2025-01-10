@@ -1,0 +1,11 @@
+{
+  "header": {
+    "user-preferences": {
+      "login": "Кіру",
+      "education": "Оқу",
+      "profile": "Профиль",
+      "logout": "Шығу",
+      "sign-in": "Кіру"
+    }
+  }
+}

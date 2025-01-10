@@ -7,9 +7,13 @@ import { QueryProvider } from '@app/providers/query-provider';
 import { router } from '@app/providers/router';
 import '@app/styles/index.scss';
 
+import '@shared/config/i18n/i18n';
 import { toastOptions } from '@shared/config/toast';
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const container = createRoot(root as HTMLElement);
+
+container.render(
   <StrictMode>
     <QueryProvider>
       <RouterProvider router={router} />

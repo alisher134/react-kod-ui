@@ -1,0 +1,11 @@
+{
+  "header": {
+    "user-preferences": {
+      "login": "Вход",
+      "education": "Обучение",
+      "profile": "Профиль",
+      "logout": "Выйти",
+      "sign-in": "Войти"
+    }
+  }
+}
