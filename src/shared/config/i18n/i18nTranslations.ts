@@ -1,11 +1,5 @@
 export enum ETranslation {
   LANGUAGE = 'language',
-  // HEADER
-  LOGIN = 'header.user-preferences.login',
-  EDUCATION = 'header.user-preferences.education',
-  PROFILE = 'header.user-preferences.profile',
-  LOGOUT = 'header.user-preferences.logout',
-  SIGNIN = 'header.user-preferences.sign-in',
 
   VALIDATION_EMAIL_REQUIRED = 'validation.email.required',
   VALIDATION_EMAIL_INVALID = 'validation.email.invalid',
@@ -15,6 +9,38 @@ export enum ETranslation {
   VALIDATION_FIRST_NAME_LENGTH = 'validation.firstName.min',
   VALIDATION_LAST_NAME_REQUIRED = 'validation.lastName.required',
   VALIDATION_LAST_NAME_LENGTH = 'validation.lastName.min',
+}
+
+export enum ELanding {
+  LOGIN = 'header.user-preferences.login',
+  EDUCATION = 'header.user-preferences.education',
+  PROFILE = 'header.user-preferences.profile',
+  LOGOUT = 'header.user-preferences.logout',
+  SIGNIN = 'header.user-preferences.sign-in',
+
+  INTRODUCTION_TITLE_TEXT = 'introduction.title.text',
+  INTRODUCTION_TITLE_SPAN = 'introduction.title.span',
+  INTRODUCTION_SUBTITLE = 'introduction.subtitle',
+  INTRODUCTION_LINK = 'introduction.link',
+
+  ADVANTAGES_CAPTION = 'advantages.caption',
+  ADVANTAGES_TITLE = 'advantages.title',
+  ADVANTAGES_SUBTITLE = 'advantages.subtitle',
+  ADVANTAGES_ADVANTAGE_FIRST = 'advantages.advantage.first',
+  ADVANTAGES_ADVANTAGE_SECOND = 'advantages.advantage.second',
+  ADVANTAGES_ADVANTAGE_THIRD = 'advantages.advantage.third',
+  ADVANTAGES_ADVANTAGE_FOURTH = 'advantages.advantage.fourth',
+
+  FOOTER_COPYRIGHT = 'footer.copyright',
+  FOOTER_COURSES_TITLE = 'footer.courses.title',
+  FOOTER_COURSES_ITEMS_FIRST = 'footer.courses.items.first',
+  FOOTER_COURSES_ITEMS_SECOND = 'footer.courses.items.second',
+  FOOTER_PRACTICE_TITLE = 'footer.practice.title',
+  FOOTER_PRACTICE_ITEMS_FIRST = 'footer.practice.items.first',
+  FOOTER_PRACTICE_ITEMS_SECOND = 'footer.practice.items.second',
+  FOOTER_MATERIALS_TITLE = 'footer.materials.title',
+  FOOTER_MATERIALS_ITEMS_FIRST = 'footer.materials.items.first',
+  FOOTER_MATERIALS_ITEMS_SECOND = 'footer.materials.items.second',
 }
 
 export enum EAuth {
