@@ -16,13 +16,13 @@ interface UserPreferencesProps {
 
 export const UserPreferences = ({ className }: UserPreferencesProps) => {
   const { logout, isLoggedIn } = useAuth();
-  const { profile, isPending } = useProfile();
+  const { profile, isLoading } = useProfile();
 
   const onLogout = async () => {
     await logout();
   };
 
-  if (isPending) return <UserPreferencesSkeleton />;
+  if (isLoading) return <UserPreferencesSkeleton />;
 
   return (
     <div className={clsx(styles.preferences, className)}>
