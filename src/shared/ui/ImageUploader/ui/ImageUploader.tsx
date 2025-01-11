@@ -2,8 +2,11 @@ import clsx from 'clsx';
 import { Image, Upload } from 'lucide-react';
 import { ChangeEvent, forwardRef, useCallback } from 'react';
 import { FieldError } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { useFileUpload } from '@entities/file-upload';
+
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 
 import styles from './ImageUploader.module.scss';
 
@@ -17,6 +20,7 @@ interface ImageUploaderProps {
 export const ImageUploader = forwardRef<HTMLInputElement, ImageUploaderProps>(
   ({ className, error, image, onChange }, ref) => {
     const { mutateAsync } = useFileUpload();
+    const { t } = useTranslation();
 
     const onUpload = useCallback(
       async (e: ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +48,7 @@ export const ImageUploader = forwardRef<HTMLInputElement, ImageUploaderProps>(
         <label className={styles.uploader}>
           <div className={styles.placeholder}>
             <Upload />
-            <span>Загрузить</span>
+            <span>{t(ETranslation.UPLOAD)}</span>
           </div>
           <input accept="image/*" onChange={onUpload} ref={ref} type="file" />
           {error && <span>{error.message}</span>}

@@ -1,9 +1,19 @@
 export enum ETranslation {
   LANGUAGE = 'language',
+  LOGOUT = 'logout',
+  UPLOAD = 'upload',
 
   NOT_FOUND_TITLE = 'not.found.title',
   NOT_FOUND_SUBTITLE = 'not.found.subtitle',
   NOT_FOUND_LINK = 'not.found.link',
+
+  SIDEBAR_MENU_COURSE = 'sidebar.menu.course',
+  SIDEBAR_MENU_MAP = 'sidebar.menu.map',
+  SIDEBAR_MENU_KODPLUS = 'sidebar.menu.kodplus',
+  SIDEBAR_MENU_BONUS = 'sidebar.menu.bonus',
+  SIDEBAR_MENU_PROFILE = 'sidebar.menu.profile',
+  SIDEBAR_MENU_COMMUNITY = 'sidebar.menu.community',
+  SIDEBAR_MENU_HELP = 'sidebar.menu.help',
 
   TOAST_AUTH_LOGIN_SUCCESS = 'toast.auth.login.success',
   TOAST_AUTH_REGISTER_SUCCESS = 'toast.auth.register.success',
@@ -17,6 +27,7 @@ export enum ETranslation {
   VALIDATION_FIRST_NAME_LENGTH = 'validation.firstName.min',
   VALIDATION_LAST_NAME_REQUIRED = 'validation.lastName.required',
   VALIDATION_LAST_NAME_LENGTH = 'validation.lastName.min',
+  VALIDATION_DESCRIPTION_LENGTH = 'validation.description.min',
 }
 
 export enum ELanding {
@@ -63,4 +74,14 @@ export enum EAuth {
   FORM_PASSWORD_PLACEHOLDER = 'form.password.placeholder',
   FORM_FIRST_NAME_PLACEHOLDER = 'form.firstName.placeholder',
   FORM_LAST_NAME_PLACEHOLDER = 'form.lastName.placeholder',
+}
+
+export enum EProfile {
+  TITLE = 'title',
+  EDIT_LINK = 'edit.link',
+  FORM_FIRST_NAME_PLACEHOLDER = 'form.firstName.placeholder',
+  FORM_LAST_NAME_PLACEHOLDER = 'form.lastName.placeholder',
+  FORM_DESCRIPTION_PLACEHOLDER = 'form.description.placeholder',
+  SUBMIT = 'submit',
+  CANCEL = 'cancel',
 }

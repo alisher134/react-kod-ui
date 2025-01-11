@@ -1,10 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CircleUserRound } from 'lucide-react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import { useProfile } from '@entities/profile';
 
+import { I18Namespace } from '@shared/config/i18n';
+import { EProfile } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 import { ImageUploader } from '@shared/ui/ImageUploader';
@@ -20,6 +23,7 @@ import styles from './EditProfileForm.module.scss';
 export const EditProfileForm = () => {
   const navigate = useNavigate();
   const { profile } = useProfile();
+  const { t } = useTranslation(I18Namespace.profile);
 
   const {
     register,
@@ -67,36 +71,36 @@ export const EditProfileForm = () => {
 
           <div className={styles.name}>
             <Input
-              {...register('firstName', { required: 'firstName is required' })}
+              {...register('firstName')}
               error={errors.firstName}
-              placeholder="Имя"
+              placeholder={t(EProfile.FORM_FIRST_NAME_PLACEHOLDER)}
               prefix={<CircleUserRound size={22} />}
               size="full"
               className={styles.firstName}
             />
 
             <Input
-              {...register('lastName', { required: 'lastName is required' })}
+              {...register('lastName')}
               error={errors.lastName}
               prefix={<CircleUserRound size={22} />}
-              placeholder="Фамилия"
+              placeholder={t(EProfile.FORM_LAST_NAME_PLACEHOLDER)}
               size="full"
               className={styles.lastName}
             />
           </div>
         </div>
         <Textarea
-          {...register('description', { required: 'description is required' })}
-          placeholder="О себе"
+          {...register('description')}
+          placeholder={t(EProfile.FORM_DESCRIPTION_PLACEHOLDER)}
           error={errors.description}
           className={styles.description}
         />
       </div>
 
       <div className={styles.buttons}>
-        <Button type="submit">Сохранить</Button>
+        <Button type="submit">{t(EProfile.SUBMIT)}</Button>
         <Button type="button" variant="secondary" onClick={onCancel}>
-          Отменить
+          {t(EProfile.CANCEL)}
         </Button>
       </div>
     </form>

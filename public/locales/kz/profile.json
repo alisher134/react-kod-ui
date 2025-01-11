@@ -1,0 +1,17 @@
+{
+  "title": "Менің профилім",
+  "edit.link": "Профильді өңдеу",
+  "form": {
+    "firstName": {
+      "placeholder": "Аты"
+    },
+    "lastName": {
+      "placeholder": "Тегі"
+    },
+    "description": {
+      "placeholder": "Өзім туралы"
+    }
+  },
+  "submit": "Сақтау",
+  "cancel": "Артқа қайту"
+}

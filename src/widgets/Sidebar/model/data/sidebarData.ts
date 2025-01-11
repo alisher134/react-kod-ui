@@ -1,42 +1,43 @@
 import { ChartArea, CircleHelp, Crown, GraduationCap, Star, User, Users } from 'lucide-react';
 
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 
 import { ISidebarMenuItem } from '../types/sidebarTypes';
 
-export const sidebarMenuData: ISidebarMenuItem[] = [
+export const sidebarMenuData = (t: (key: string) => string): ISidebarMenuItem[] => [
   {
-    title: 'Курсы',
+    title: t(ETranslation.SIDEBAR_MENU_COURSE),
     icon: GraduationCap,
     link: ROUTES.student.courses.page,
   },
   {
-    title: 'Карта развитий',
+    title: t(ETranslation.SIDEBAR_MENU_MAP),
     icon: ChartArea,
     link: '',
   },
   {
-    title: 'KodПлюс',
+    title: t(ETranslation.SIDEBAR_MENU_KODPLUS),
     icon: Crown,
     link: '',
   },
   {
-    title: 'Бонусы',
+    title: t(ETranslation.SIDEBAR_MENU_BONUS),
     icon: Star,
     link: '',
   },
   {
-    title: 'Профиль',
+    title: t(ETranslation.SIDEBAR_MENU_PROFILE),
     icon: User,
     link: ROUTES.student.my_profile.page,
   },
   {
-    title: 'Сообщество',
+    title: t(ETranslation.SIDEBAR_MENU_COMMUNITY),
     icon: Users,
     link: '',
   },
   {
-    title: 'Помощь',
+    title: t(ETranslation.SIDEBAR_MENU_HELP),
     icon: CircleHelp,
     link: '',
   },

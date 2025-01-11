@@ -1,4 +1,5 @@
 import { LogOut, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import { Logo } from '@widgets/Logo';
@@ -7,6 +8,7 @@ import { sidebarMenuData } from '@widgets/Sidebar/model/data/sidebarData';
 import { useAuth } from '@entities/auth';
 import { useProfile } from '@entities/profile';
 
+import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
 
 import { SidebarMenuList } from '../SidebarMenuList/SidebarMenuList';
@@ -17,6 +19,7 @@ import styles from './Sidebar.module.scss';
 export const Sidebar = () => {
   const navigate = useNavigate();
   const { profile, isLoading } = useProfile();
+  const { t } = useTranslation();
   const { logout } = useAuth();
 
   const onLogout = async () => {
@@ -41,12 +44,12 @@ export const Sidebar = () => {
           />
         </div>
 
-        <SidebarMenuList menu={sidebarMenuData} />
+        <SidebarMenuList menu={sidebarMenuData(t)} />
 
         <div className={styles.bottom}>
           <button onClick={onLogout} className={styles['logout-button']}>
             <LogOut className={styles.icon} />
-            <span>Выйти</span>
+            <span>{t(ETranslation.LOGOUT)}</span>
           </button>
 
           <Logo size="sm" className={styles.logo} />

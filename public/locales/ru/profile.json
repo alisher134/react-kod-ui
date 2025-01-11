@@ -1,0 +1,17 @@
+{
+  "title": "Мой профиль",
+  "edit.link": "Редактировать профиль",
+  "form": {
+    "firstName": {
+      "placeholder": "Имя"
+    },
+    "lastName": {
+      "placeholder": "Фамилия"
+    },
+    "description": {
+      "placeholder": "О себе"
+    }
+  },
+  "submit": "Сохранить",
+  "cancel": "Отменить"
+}
