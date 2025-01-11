@@ -10,7 +10,6 @@ export enum ETranslation {
   SIDEBAR_MENU_COURSE = 'sidebar.menu.course',
   SIDEBAR_MENU_MAP = 'sidebar.menu.map',
   SIDEBAR_MENU_KODPLUS = 'sidebar.menu.kodplus',
-  SIDEBAR_MENU_BONUS = 'sidebar.menu.bonus',
   SIDEBAR_MENU_PROFILE = 'sidebar.menu.profile',
   SIDEBAR_MENU_COMMUNITY = 'sidebar.menu.community',
   SIDEBAR_MENU_HELP = 'sidebar.menu.help',
@@ -28,6 +27,15 @@ export enum ETranslation {
   VALIDATION_LAST_NAME_REQUIRED = 'validation.lastName.required',
   VALIDATION_LAST_NAME_LENGTH = 'validation.lastName.min',
   VALIDATION_DESCRIPTION_LENGTH = 'validation.description.min',
+
+  CRUMBS_COURSE = 'crumbs.course',
+  CRUMBS_MAP = 'crumbs.map',
+  CRUMBS_KODPLUS = 'crumbs.kodplus',
+  CRUMBS_BONUS = 'crumbs.bonus',
+  CRUMBS_PROFILE = 'crumbs.profile',
+  CRUMBS_PROFILE_EDIT = 'crumbs.profile.edit',
+  CRUMBS_COMMUNITY = 'crumbs.community',
+  CRUMBS_HELP = 'crumbs.help',
 }
 
 export enum ELanding {
@@ -84,4 +92,24 @@ export enum EProfile {
   FORM_DESCRIPTION_PLACEHOLDER = 'form.description.placeholder',
   SUBMIT = 'submit',
   CANCEL = 'cancel',
+}
+
+export enum EHelp {
+  TITLE = 'title',
+  CARDS_FIRST_TITLE = 'cards.first.title',
+  CARDS_FIRST_TEXT = 'cards.first.text',
+  CARDS_FIRST_LINK = 'cards.first.link',
+  CARDS_SECOND_TITLE = 'cards.second.title',
+  CARDS_SECOND_TEXT = 'cards.second.text',
+  CARDS_SECOND_LINK = 'cards.second.link',
+
+  SUBTITLE = 'subtitle',
+  QUESTIONS_FIRST_TITLE = 'questions.first.title',
+  QUESTIONS_FIRST_ANSWER = 'questions.first.answer',
+  QUESTIONS_SECOND_TITLE = 'questions.second.title',
+  QUESTIONS_SECOND_ANSWER = 'questions.second.answer',
+  QUESTIONS_THIRD_TITLE = 'questions.third.title',
+  QUESTIONS_THIRD_ANSWER = 'questions.third.answer',
+  QUESTIONS_FOURTH_TITLE = 'questions.fourth.title',
+  QUESTIONS_FOURTH_ANSWER = 'questions.fourth.answer',
 }

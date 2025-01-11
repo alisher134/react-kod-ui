@@ -11,6 +11,7 @@ export const I18Namespace = {
   landing: 'landing',
   auth: 'auth',
   profile: 'profile',
+  help: 'help',
   translation: 'translation',
 };
 

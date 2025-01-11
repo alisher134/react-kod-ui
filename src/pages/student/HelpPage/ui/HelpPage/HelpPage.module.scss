@@ -1,0 +1,13 @@
+@use '@app/styles/_variables' as *;
+
+.help {
+  .container {
+    max-width: 892px;
+
+    .title {
+      color: $gray-light;
+      font-weight: 400;
+      font-size: 36px;
+    }
+  }
+}

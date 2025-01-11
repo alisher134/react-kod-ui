@@ -1,0 +1,57 @@
+@use '@app/styles/_variables' as *;
+
+.help-list {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 42px;
+      width: 422px;
+      height: 460px;
+      border-radius: 10px;
+      background: $gray-dark;
+      text-align: center;
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        background-color: $black;
+      }
+
+      .content {
+        .title {
+          color: $white;
+          font-weight: 400;
+          font-size: 36px;
+        }
+
+        .text {
+          color: $white;
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 30px;
+  }
+}

@@ -1,4 +1,4 @@
-import { ChartArea, CircleHelp, Crown, GraduationCap, Star, User, Users } from 'lucide-react';
+import { ChartArea, CircleHelp, Crown, GraduationCap, User, Users } from 'lucide-react';
 
 import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
@@ -22,11 +22,6 @@ export const sidebarMenuData = (t: (key: string) => string): ISidebarMenuItem[] 
     link: '',
   },
   {
-    title: t(ETranslation.SIDEBAR_MENU_BONUS),
-    icon: Star,
-    link: '',
-  },
-  {
     title: t(ETranslation.SIDEBAR_MENU_PROFILE),
     icon: User,
     link: ROUTES.student.my_profile.page,
@@ -39,6 +34,6 @@ export const sidebarMenuData = (t: (key: string) => string): ISidebarMenuItem[] 
   {
     title: t(ETranslation.SIDEBAR_MENU_HELP),
     icon: CircleHelp,
-    link: '',
+    link: ROUTES.student.help.page,
   },
 ];

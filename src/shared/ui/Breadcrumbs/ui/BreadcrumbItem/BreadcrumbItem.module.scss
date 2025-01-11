@@ -1,0 +1,10 @@
+@use '@app/styles/_variables' as *;
+
+.link {
+  color: $links;
+  text-decoration: none;
+}
+
+.current {
+  color: $gray;
+}

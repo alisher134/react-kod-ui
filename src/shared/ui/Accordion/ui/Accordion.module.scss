@@ -1,0 +1,69 @@
+@use '@app/styles/_variables' as *;
+
+.accordion {
+  padding: 18px 32px;
+  border-radius: 10px;
+  background: $gray-dark;
+
+  .button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: none;
+    color: $white;
+    cursor: pointer;
+
+    .title {
+      color: $white;
+      text-align: left;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      width: 40px;
+      border-radius: 10px;
+      background: $primary;
+
+      .icon {
+        transition: transform $primary-transition;
+      }
+
+      &.rotate {
+        .icon {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .collapsed {
+    max-width: calc(100% - 80px);
+    max-height: 0;
+    line-height: 150%;
+    font-weight: 400;
+    font-size: 18px;
+    transition:
+      max-height 0.2s ease-in-out,
+      margin-top 0.1s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.accordion-opened {
+    .collapsed {
+      margin-top: 24px 0 0;
+      max-height: 200px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

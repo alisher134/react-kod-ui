@@ -9,6 +9,7 @@ import { Error404Page } from '@pages/Error404Page';
 import { LoginPage } from '@pages/auth/LoginPage';
 import { RegisterPage } from '@pages/auth/RegisterPage';
 import { MainPage as LandingMainPage } from '@pages/landing/MainPage';
+import { HelpPage } from '@pages/student/HelpPage';
 import { EditProfilePage } from '@pages/student/profile/EditProfilePage';
 import { ProfilePage } from '@pages/student/profile/ProfilePage';
 
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
           {
             path: ROUTES.student.my_profile.edit.route,
             element: <EditProfilePage />,
+          },
+          {
+            path: ROUTES.student.help.route,
+            element: <HelpPage />,
           },
         ],
       },

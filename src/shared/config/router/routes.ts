@@ -29,5 +29,9 @@ export const ROUTES = {
         page: '/student/profile/my/edit',
       },
     },
+    help: {
+      route: 'help',
+      page: '/student/help',
+    },
   },
 };

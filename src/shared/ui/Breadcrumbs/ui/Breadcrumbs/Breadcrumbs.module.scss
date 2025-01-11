@@ -1,0 +1,17 @@
+@use '@app/styles/_variables' as *;
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 18px;
+
+  .arrow {
+    color: $gray-stroke;
+  }
+}
