@@ -11,7 +11,7 @@ export const useProfile = () => {
   const { data: profile, isLoading } = useQuery({
     queryKey: ['profile'],
     queryFn: () => profileService.getProfile(),
-    select: ({ data }) => data,
+    select: ({ data }) => data.profile,
     enabled: !!accessToken,
   });
 

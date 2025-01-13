@@ -1,3 +1,6 @@
+export interface IProfileResponse {
+  profile: IProfile;
+}
 export interface IProfile {
   id: string;
   createdAt: string;
@@ -12,5 +15,5 @@ export interface IProfile {
 
 export enum EProfileRole {
   ADMIN = 'ADMIN',
-  USER = 'USER',
+  STUDENT = 'STUDENT',
 }

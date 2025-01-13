@@ -15,6 +15,7 @@ export const EditProfileSchema: ZodType = z.object({
   description: z
     .string()
     .min(50, { message: i18n.t(ETranslation.VALIDATION_DESCRIPTION_LENGTH) })
-    .optional(),
-  avatarPath: z.string().optional(),
+    .optional()
+    .nullable(),
+  avatarPath: z.string().optional().nullable(),
 });

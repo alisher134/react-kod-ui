@@ -2,9 +2,9 @@ import axios from 'axios';
 
 import { authService } from '@entities/auth';
 
+import { ROUTES } from '@shared/config/router';
 import { ETokens } from '@shared/constants/authConstants';
 import { getFromCookie, removeFromCookie, saveToCookie } from '@shared/helpers/manageCookie';
-import { errorHandler } from '@shared/utils';
 
 import { axiosOptions } from './axiosHelper';
 
@@ -20,29 +20,25 @@ axiosInstance.interceptors.request.use((config) => {
 });
 
 axiosInstance.interceptors.response.use(
-  (config) => config,
+  (response) => response,
   async (error) => {
     const originalRequest = error.config;
 
-    if (
-      (error.response.status === 401 ||
-        errorHandler(error) === 'jwt expired' ||
-        errorHandler(error) === 'jwt must be provided') &&
-      error.config &&
-      !error.config._isRetry
-    ) {
+    if (error.response.status === 401 && !originalRequest._isRetry) {
       originalRequest._isRetry = true;
-      try {
-        const response = await authService.refreshToken();
-        if (response.data.accessToken)
-          saveToCookie(ETokens.ACCESS_TOKEN, response.data.accessToken);
 
-        return axiosInstance.request(originalRequest);
-      } catch (error) {
-        if (errorHandler(error) === 'jwt expired') {
-          authService.logout();
-          removeFromCookie(ETokens.ACCESS_TOKEN);
+      try {
+        const { data } = await authService.refreshToken();
+
+        if (data.accessToken) {
+          saveToCookie(ETokens.ACCESS_TOKEN, data.accessToken);
+          return axiosInstance.request(originalRequest);
         }
+      } catch (error) {
+        await authService.logout();
+        removeFromCookie(ETokens.ACCESS_TOKEN);
+        window.location.href = ROUTES.auth.login.page;
+        throw error;
       }
     }
 

@@ -1,4 +1,4 @@
-import { axiosPublic } from '@shared/api';
+import { axiosInstance, axiosPublic } from '@shared/api';
 import { API_CONFIG } from '@shared/config/api/apiConfig';
 
 import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from '../model/types/authTypes';
@@ -16,7 +16,7 @@ export const authService = {
     return await axiosPublic.post<IAuthResponse>(API_CONFIG.AUTH.REFRESH);
   },
 
-  logout() {
-    return axiosPublic.post(API_CONFIG.AUTH.LOGOUT);
+  async logout() {
+    return await axiosInstance.post(API_CONFIG.AUTH.LOGOUT);
   },
 };

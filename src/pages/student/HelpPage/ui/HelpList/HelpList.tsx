@@ -37,7 +37,9 @@ export const HelpList = ({ t, cards, questions }: HelpListProps) => {
 
         <div className={styles.questions}>
           {questions.map((question) => (
-            <Accordion title={question.title}>{question.answer}</Accordion>
+            <Accordion title={question.title} key={question.title}>
+              {question.answer}
+            </Accordion>
           ))}
         </div>
       </div>

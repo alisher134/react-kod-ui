@@ -11,7 +11,6 @@ export interface ILoginFormValues {
 }
 
 export interface IAuthResponse {
-  user: IAuthUser;
   accessToken: string;
 }
 

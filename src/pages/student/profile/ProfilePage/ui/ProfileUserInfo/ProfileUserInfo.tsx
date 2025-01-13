@@ -34,7 +34,7 @@ export const ProfileUserInfo = ({ profile, isLoading }: ProfileUserInfoProps) =>
           <span className={styles.name}>{profile?.firstName + ' ' + profile?.lastName}</span>
           <span className={styles.email}>Email: {profile?.email}</span>
           <span className={styles.role}>
-            {profile?.role === EProfileRole.USER ? 'Ученик' : 'Админ'}
+            {profile?.role === EProfileRole.STUDENT ? 'Ученик' : 'Админ'}
           </span>
         </div>
       </div>
