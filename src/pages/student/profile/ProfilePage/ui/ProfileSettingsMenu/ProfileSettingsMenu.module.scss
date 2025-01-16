@@ -1,0 +1,87 @@
+@use '@app/styles/_variables' as *;
+
+.settings-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  width: 400px;
+  background-color: $gray-dark;
+
+  .top {
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+
+    .close-button {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: none;
+      color: $gray;
+      transition: $primary-transition;
+      cursor: pointer;
+
+      svg {
+        display: flex;
+        justify-content: center;
+      }
+
+      &:hover {
+        background-color: $violet-dark;
+      }
+    }
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+
+    .item {
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin: 0 0 30px;
+
+        .icon {
+          display: block;
+          color: $primary;
+        }
+
+        span {
+          line-height: 120%;
+        }
+      }
+
+      .email {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 32px;
+
+        .text {
+          color: $gray;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 1px;
+      border: none;
+      background: $gray-stroke;
+    }
+  }
+}

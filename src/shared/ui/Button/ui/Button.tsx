@@ -17,7 +17,7 @@ export const Button = ({
   className,
   prefix,
   suffix,
-  size = 'md',
+  size = 'sm',
   variant = 'primary',
   isLink = false,
   ...props
@@ -31,7 +31,9 @@ export const Button = ({
 
   return (
     <button className={clsx(styles.button, className, styles[size], styles[variant])} {...props}>
+      {prefix && <span className={styles.icon}>{prefix}</span>}
       {children}
+      {suffix && <span className={styles.icon}>{suffix}</span>}
     </button>
   );
 };

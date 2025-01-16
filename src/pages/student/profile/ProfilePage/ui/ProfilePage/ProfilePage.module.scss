@@ -1,10 +1,31 @@
 @use '@app/styles/_variables' as *;
 
-.profile {
-  .container {
+.wrapper {
+  position: relative;
+
+  .profile {
+    max-width: 1508px;
+    transition: max-width 300ms ease-in-out;
+
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+
+      .settings-button {
+        svg {
+          color: $gray;
+        }
+      }
+    }
+
     .title {
-      margin-bottom: 32px;
+      margin: 5px 0 32px;
       color: $gray-light;
+      line-height: 120%;
       font-weight: 400;
       font-size: 36px;
     }
@@ -16,6 +37,19 @@
       color: $links;
       text-decoration: none;
       font-size: 18px;
+    }
+  }
+
+  &.is-open {
+    .profile {
+      max-width: 1172px;
+
+      .top {
+        .settings-button {
+          transition: none;
+          opacity: 0;
+        }
+      }
     }
   }
 }

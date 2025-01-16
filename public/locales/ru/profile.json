@@ -12,6 +12,15 @@
       "placeholder": "О себе"
     }
   },
+  "settings": {
+    "button": "Настройки",
+    "menu": {
+      "first": {
+        "title": "Аккаунт",
+        "button": "Сбросить пороль"
+      }
+    }
+  },
   "submit": "Сохранить",
   "cancel": "Отменить"
 }

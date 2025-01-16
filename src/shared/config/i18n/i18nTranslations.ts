@@ -102,6 +102,9 @@ export enum EProfile {
   FORM_FIRST_NAME_PLACEHOLDER = 'form.firstName.placeholder',
   FORM_LAST_NAME_PLACEHOLDER = 'form.lastName.placeholder',
   FORM_DESCRIPTION_PLACEHOLDER = 'form.description.placeholder',
+  SETTINGS_BUTTON = 'settings.button',
+  SETTINGS_MENU_FIRST_TITLE = 'settings.menu.first.title',
+  SETTINGS_MENU_FIRST_BUTTON = 'settings.menu.first.button',
   SUBMIT = 'submit',
   CANCEL = 'cancel',
 }

@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
-export type TButtonSize = 'md' | 'lg' | 'full';
+export type TButtonSize = 'sm' | 'lg' | 'full';
 export type TButtonVariant = 'primary' | 'secondary';
 
 export type ButtonType = Omit<

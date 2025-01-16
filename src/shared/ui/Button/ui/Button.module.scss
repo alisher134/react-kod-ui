@@ -5,6 +5,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -12,6 +13,11 @@
   color: $white;
   transition: $primary-transition;
   cursor: pointer;
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
 
   &.primary {
     background: $primary;
@@ -30,13 +36,13 @@
     }
   }
 
-  &.md {
+  &.sm {
     padding: 12px 45px;
     font-size: 18px;
   }
 
   &.lg {
-    padding: 16px 32px;
+    padding: 15px 32px;
     font-size: 18px;
   }
 
