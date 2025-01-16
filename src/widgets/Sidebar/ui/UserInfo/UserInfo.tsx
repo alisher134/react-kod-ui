@@ -1,6 +1,7 @@
-import Skeleton from 'react-loading-skeleton';
+import clsx from 'clsx';
 
 import avatarIcon from '@shared/assets/icons/avatar.svg';
+import { Skeleton } from '@shared/ui/Skeleton';
 
 import styles from './UserInfo.module.scss';
 
@@ -8,16 +9,23 @@ interface UserInfoProps {
   firstName?: string;
   avatarPath?: string | null;
   isLoading: boolean;
+  isCollapsed: boolean;
 }
 
-export const UserInfo = ({ firstName, avatarPath, isLoading }: UserInfoProps) => {
+export const UserInfo = ({ firstName, avatarPath, isLoading, isCollapsed }: UserInfoProps) => {
   return (
-    <div className={styles['user-info']}>
+    <div className={clsx(styles['user-info'], { [styles['is-collapsed']]: isCollapsed })}>
       {isLoading ? (
-        <>
-          <Skeleton count={1} width={72} height={72} borderRadius={'50%'} />
-          <Skeleton count={1} width={70} height={20} />
-        </>
+        <div className={styles.skeleton}>
+          <Skeleton
+            count={1}
+            width={72}
+            height={72}
+            borderRadius={'50%'}
+            className={styles.avatar}
+          />
+          <Skeleton count={1} width={70} height={20} className={styles.text} />
+        </div>
       ) : (
         <>
           <div className={styles.image}>

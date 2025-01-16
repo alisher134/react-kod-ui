@@ -4,6 +4,7 @@ import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
 import { LS_LANGUAGE_KEY } from '@shared/constants';
+import { getFromLS, setToLS } from '@shared/helpers/manageLocalStorage';
 
 type TLangs = 'kz' | 'ru';
 
@@ -38,8 +39,8 @@ i18n
     },
   });
 
-if (!localStorage.getItem(LS_LANGUAGE_KEY)) {
-  localStorage.setItem(LS_LANGUAGE_KEY, 'kz');
+if (!getFromLS(LS_LANGUAGE_KEY)) {
+  setToLS(LS_LANGUAGE_KEY, 'ks');
 }
 
 export default i18n;

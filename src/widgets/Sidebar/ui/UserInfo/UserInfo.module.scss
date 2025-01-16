@@ -5,6 +5,12 @@
   align-items: center;
   gap: 12px;
 
+  .skeleton {
+    .avatar {
+      margin-bottom: 15px;
+    }
+  }
+
   .image {
     width: 72px;
     height: 72px;
@@ -15,6 +21,28 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+    }
+  }
+
+  &.is-collapsed {
+    .skeleton {
+      .avatar {
+        max-width: 24px;
+        max-height: 24px;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .image {
+      width: 24px;
+      height: 24px;
+    }
+
+    .name {
+      display: none;
     }
   }
 }

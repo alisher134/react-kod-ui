@@ -4,12 +4,17 @@ import { SidebarMenuItem } from '../SidebarMenuItem/SidebarMenuItem';
 
 import styles from './SidebarMenuList.module.scss';
 
-export const SidebarMenuList = ({ menu }: { menu: ISidebarMenuItem[] }) => {
+export interface ISidebarMenuListProps {
+  menu: ISidebarMenuItem[];
+  isCollapsed: boolean;
+}
+
+export const SidebarMenuList = ({ menu, isCollapsed }: ISidebarMenuListProps) => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
         {menu.map((item) => (
-          <SidebarMenuItem item={item} key={item.title} />
+          <SidebarMenuItem item={item} isCollapsed={isCollapsed} key={item.title} />
         ))}
       </ul>
     </nav>
