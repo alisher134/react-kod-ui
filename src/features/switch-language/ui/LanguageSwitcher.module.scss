@@ -3,13 +3,22 @@
 .switch {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  outline: none;
-  border: none;
-  border: 1px solid $gray;
-  border-radius: 10px;
-  background: none;
-  color: $white;
-  cursor: pointer;
+  gap: 10px;
+
+  .button {
+    outline: none;
+    border: none;
+    background: none;
+    color: $white;
+    transition: $primary-transition;
+    cursor: pointer;
+
+    &.active {
+      color: $primary;
+    }
+
+    :hover {
+      color: $primary;
+    }
+  }
 }

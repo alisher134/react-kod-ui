@@ -4,12 +4,12 @@ import { API_CONFIG } from '@shared/config/api/apiConfig';
 import { IAuthResponse, ILoginFormValues, IRegisterFormValues } from '../model/types/authTypes';
 
 export const authService = {
-  async login(data: ILoginFormValues) {
-    return await axiosPublic.post<IAuthResponse>(API_CONFIG.AUTH.LOGIN, data);
+  async login(body: ILoginFormValues) {
+    return await axiosPublic.post<IAuthResponse>(API_CONFIG.AUTH.LOGIN, body);
   },
 
-  async register(data: IRegisterFormValues) {
-    return await axiosPublic.post<IAuthResponse>(API_CONFIG.AUTH.REGISTER, data);
+  async register(body: IRegisterFormValues) {
+    return await axiosPublic.post<IAuthResponse>(API_CONFIG.AUTH.REGISTER, body);
   },
 
   async refreshToken() {

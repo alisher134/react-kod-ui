@@ -1,4 +1,4 @@
-import { Globe } from 'lucide-react';
+import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 
 import { I18Namespace } from '@shared/config/i18n';
@@ -11,15 +11,27 @@ import styles from './LanguageSwitcher.module.scss';
 export const LanguageSwitcher = () => {
   const { t, i18n } = useTranslation(I18Namespace.translation);
 
-  const changeLanguage = () => {
-    const newLang = i18n.language === ELanguages.KZ ? ELanguages.RU : ELanguages.KZ;
-    i18n.changeLanguage(newLang);
-  };
+  const currentLanguage = i18n.language;
 
   return (
-    <button onClick={changeLanguage} className={styles.switch}>
-      <Globe className={styles.icon} />
-      <span>{t(ETranslation.LANGUAGE)}</span>
-    </button>
+    <div className={styles.switch}>
+      <button
+        onClick={() => i18n.changeLanguage(ELanguages.KZ)}
+        className={clsx(styles.button, {
+          [styles.active]: currentLanguage === ELanguages.KZ,
+        })}
+      >
+        <span>{t(ETranslation.LANGUAGE_KZ)}</span>
+      </button>
+
+      <button
+        onClick={() => i18n.changeLanguage(ELanguages.RU)}
+        className={clsx(styles.button, {
+          [styles.active]: currentLanguage === ELanguages.RU,
+        })}
+      >
+        <span>{t(ETranslation.LANGUAGE_RU)}</span>
+      </button>
+    </div>
   );
 };

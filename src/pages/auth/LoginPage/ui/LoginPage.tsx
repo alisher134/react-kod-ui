@@ -2,9 +2,9 @@ import { LoginCreateForm } from '@widgets/auth/login';
 
 const LoginPage = () => {
   return (
-    <div>
+    <section>
       <LoginCreateForm />
-    </div>
+    </section>
   );
 };
 

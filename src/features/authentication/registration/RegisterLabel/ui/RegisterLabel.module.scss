@@ -2,16 +2,17 @@
 
 .wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   .action {
     color: $links;
     text-decoration: none;
+    font-size: 18px;
     transition: $primary-transition;
 
     &:hover {
-      color: $white;
+      color: $primary;
     }
   }
 }

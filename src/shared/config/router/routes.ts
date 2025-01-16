@@ -6,13 +6,17 @@ export const ROUTES = {
       route: 'login',
       page: '/auth/login',
     },
+    register: {
+      route: 'register',
+      page: '/auth/register',
+    },
     restore: {
       route: 'restore',
       page: '/auth/restore',
     },
-    register: {
-      route: 'register',
-      page: '/auth/register',
+    reset: {
+      route: 'reset',
+      page: '/auth/reset',
     },
   },
   student: {

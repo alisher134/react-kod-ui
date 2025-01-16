@@ -3,6 +3,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+import { LS_LANGUAGE_KEY } from '@shared/constants';
+
 type TLangs = 'kz' | 'ru';
 
 const supportedLngs: TLangs[] = ['kz', 'ru'];
@@ -21,18 +23,23 @@ i18n
   .use(initReactI18next)
   .init({
     debug: false,
-    fallbackLng: 'kz',
     interpolation: {
       escapeValue: false,
     },
     supportedLngs,
+    fallbackLng: 'kz',
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     detection: {
       caches: ['localStorage'],
       order: ['localStorage', 'navigator'],
+      lookupLocalStorage: LS_LANGUAGE_KEY,
     },
   });
+
+if (!localStorage.getItem(LS_LANGUAGE_KEY)) {
+  localStorage.setItem(LS_LANGUAGE_KEY, 'kz');
+}
 
 export default i18n;

@@ -18,7 +18,7 @@ import { ILoginFormValues, IRegisterFormValues } from '../types/authTypes';
 export const useAuth = () => {
   const loginMutation = useMutation({
     mutationKey: ['auth/login'],
-    mutationFn: (data: ILoginFormValues) => authService.login(data),
+    mutationFn: (body: ILoginFormValues) => authService.login(body),
     onSuccess({ data }) {
       saveToCookie(ETokens.ACCESS_TOKEN, data.accessToken);
       toast.success(i18n.t(ETranslation.TOAST_AUTH_LOGIN_SUCCESS));
@@ -30,7 +30,7 @@ export const useAuth = () => {
 
   const registerMutation = useMutation({
     mutationKey: ['auth/register'],
-    mutationFn: (data: IRegisterFormValues) => authService.register(data),
+    mutationFn: (body: IRegisterFormValues) => authService.register(body),
     onSuccess({ data }) {
       saveToCookie(ETokens.ACCESS_TOKEN, data.accessToken);
       toast.success(i18n.t(ETranslation.TOAST_AUTH_REGISTER_SUCCESS));

@@ -2,7 +2,6 @@ import axios from 'axios';
 
 import { authService } from '@entities/auth';
 
-import { ROUTES } from '@shared/config/router';
 import { ETokens } from '@shared/constants/authConstants';
 import { getFromCookie, removeFromCookie, saveToCookie } from '@shared/helpers/manageCookie';
 
@@ -24,7 +23,7 @@ axiosInstance.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    if (error.response.status === 401 && !originalRequest._isRetry) {
+    if (error.response?.status === 401 && !originalRequest._isRetry) {
       originalRequest._isRetry = true;
 
       try {
@@ -35,9 +34,7 @@ axiosInstance.interceptors.response.use(
           return axiosInstance.request(originalRequest);
         }
       } catch (error) {
-        await authService.logout();
         removeFromCookie(ETokens.ACCESS_TOKEN);
-        window.location.href = ROUTES.auth.login.page;
         throw error;
       }
     }

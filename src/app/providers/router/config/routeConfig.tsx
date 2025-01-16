@@ -8,6 +8,8 @@ import { StudentLayout } from '@app/layouts/StudentLayout';
 import { Error404Page } from '@pages/Error404Page';
 import { LoginPage } from '@pages/auth/LoginPage';
 import { RegisterPage } from '@pages/auth/RegisterPage';
+import { ResetPasswordPage } from '@pages/auth/ResetPage';
+import { RestorePasswordPage } from '@pages/auth/RestorePage';
 import { MainPage as LandingMainPage } from '@pages/landing/MainPage';
 import { HelpPage } from '@pages/student/HelpPage';
 import { EditProfilePage } from '@pages/student/profile/EditProfilePage';
@@ -51,6 +53,14 @@ export const router = createBrowserRouter([
           {
             path: ROUTES.auth.register.route,
             element: <RegisterPage />,
+          },
+          {
+            path: ROUTES.auth.restore.route,
+            element: <RestorePasswordPage />,
+          },
+          {
+            path: ROUTES.auth.reset.route,
+            element: <ResetPasswordPage />,
           },
         ],
       },

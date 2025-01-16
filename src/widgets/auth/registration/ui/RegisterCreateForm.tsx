@@ -1,10 +1,10 @@
-import { LoginLabel, RegisterForm } from '@features/authentication/registration';
+import { RegisterForm, RegisterLabel } from '@features/authentication/registration';
 
 export const RegisterCreateForm = () => {
   return (
     <>
       <RegisterForm />
-      <LoginLabel />
+      <RegisterLabel />
     </>
   );
 };

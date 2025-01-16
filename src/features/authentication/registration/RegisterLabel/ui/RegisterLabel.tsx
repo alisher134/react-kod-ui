@@ -12,11 +12,8 @@ export const RegisterLabel = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Link to={ROUTES.auth.restore.page} className={styles.action}>
-        {t(EAuth.LOGIN_RESTORE)}
-      </Link>
-      <Link to={ROUTES.auth.register.page} className={styles.action}>
-        {t(EAuth.LOGIN_REGISTRATION)}
+      <Link to={ROUTES.auth.login.page} className={styles.action}>
+        {t(EAuth.REGISTER_HAVE_ACCOUNT)}
       </Link>
     </div>
   );

@@ -22,7 +22,12 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'no-console': 'warn',
       'no-debugger': 'warn',
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',

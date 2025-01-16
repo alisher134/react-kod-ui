@@ -1,2 +1,2 @@
-export { LoginLabel } from './LoginLabel';
 export { RegisterForm } from './RegisterForm';
+export { RegisterLabel } from './RegisterLabel';
