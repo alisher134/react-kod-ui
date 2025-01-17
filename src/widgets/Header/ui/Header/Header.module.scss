@@ -10,15 +10,5 @@
     align-items: center;
     margin: 0 auto;
     max-width: $layout-max-width;
-
-    .nav {
-      .list {
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        list-style-type: none;
-        font-size: 18px;
-      }
-    }
   }
 }

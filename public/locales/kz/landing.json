@@ -1,5 +1,19 @@
 {
   "header": {
+    "nav": {
+      "menu": {
+        "career.paths": "Мансап жолдары",
+        "frontend.developer": "Frontend бағдарламашы",
+        "backend.developer": "Backend бағдарламашы",
+        "fullstack.developer": "Fullstack бағдарламашы",
+        "mobile.developer": "Мобильді бағдарламашы",
+        "free": "Тегін",
+        "skills.map": "Дамыту картасы",
+        "development.basics": "Бағдарламалау негіздері",
+        "css.flexbox": "CSS Flexbox",
+        "knowledge.base": "Білім қоры"
+      }
+    },
     "user-preferences": {
       "login": "Кіру",
       "education": "Оқу",

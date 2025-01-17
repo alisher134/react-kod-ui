@@ -1,5 +1,19 @@
 {
   "header": {
+    "nav": {
+      "menu": {
+        "career.paths": "Карьерные пути",
+        "frontend.developer": "Frontend разработчик",
+        "backend.developer": "Backend разработчик",
+        "fullstack.developer": "Fullstack разработчик",
+        "mobile.developer": "Mobile разработчик",
+        "free": "Бесплатно",
+        "skills.map": "Карта развития",
+        "development.basics": "Основы разработки",
+        "css.flexbox": "CSS Flexbox",
+        "knowledge.base": "База знаний"
+      }
+    },
     "user-preferences": {
       "login": "Вход",
       "education": "Обучение",

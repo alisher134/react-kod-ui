@@ -1,0 +1,52 @@
+@use '@app/styles/_variables' as *;
+
+.item {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+
+  span {
+    line-height: 120%;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: no-wrap;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    padding: 32px 24px 12px;
+    min-width: 270px;
+    border-radius: 0 10px 10px;
+    background: $violet-dark;
+    list-style-type: none;
+
+    .sub-item {
+      margin-bottom: 20px;
+
+      .link {
+        color: $white;
+        line-height: 120%;
+        font-weight: 400;
+        font-size: 18px;
+        white-space: no-wrap;
+
+        &:hover {
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background: $violet-dark;
+    color: $gray;
+
+    .dropdown {
+      display: block;
+    }
+  }
+}

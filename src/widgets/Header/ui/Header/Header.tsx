@@ -1,28 +1,22 @@
-import { Menu } from 'lucide-react';
-
+import { useHeaderMenuData } from '@widgets/Header/model/data/headerData.ts';
 import { Logo } from '@widgets/Logo';
 
 import { UserPreferences } from '@features/common/user-preferences';
 import { LanguageSwitcher } from '@features/switch-language';
 
+import { HeaderNavigation } from '../HeaderNavigation/HeaderNavigation';
+
 import styles from './Header.module.scss';
 
 export const Header = () => {
+  const { navMenuData } = useHeaderMenuData();
+
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
         <Logo />
 
-        <nav className={styles.nav}>
-          <ul className={styles.list}>
-            <li>Курсы</li>
-            <li>Карьерные пути</li>
-            <li>Бесплатно</li>
-            <li>
-              <Menu />
-            </li>
-          </ul>
-        </nav>
+        <HeaderNavigation menu={navMenuData} />
 
         <LanguageSwitcher />
 

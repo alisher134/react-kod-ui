@@ -1,4 +1,4 @@
-import { ChartArea, CircleHelp, Crown, GraduationCap, User, Users } from 'lucide-react';
+import { ChartArea, CircleHelp, GraduationCap, User, Users } from 'lucide-react';
 
 import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
@@ -14,11 +14,6 @@ export const sidebarMenuData = (t: (key: string) => string): ISidebarMenuItem[] 
   {
     title: t(ETranslation.SIDEBAR_MENU_MAP),
     icon: ChartArea,
-    link: '',
-  },
-  {
-    title: t(ETranslation.SIDEBAR_MENU_KODPLUS),
-    icon: Crown,
     link: '',
   },
   {

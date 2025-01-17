@@ -25,7 +25,9 @@ export const Button = ({
   if (isLink)
     return (
       <a className={clsx(styles.button, className, styles[size], styles[variant])} {...props}>
+        {prefix && <span className={styles.icon}>{prefix}</span>}
         {children}
+        {suffix && <span className={styles.icon}>{suffix}</span>}
       </a>
     );
 
