@@ -50,3 +50,26 @@
     }
   }
 }
+
+@media screen and (width <= 1300px) {
+  .wrapper {
+    .container {
+      padding: 34px 24px;
+    }
+  }
+}
+
+@media screen and (width <= 800px) {
+  .wrapper {
+    .logo {
+      margin: 0;
+    }
+
+    .container {
+      .blocks {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
+}

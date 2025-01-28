@@ -12,3 +12,15 @@
     max-width: $layout-max-width;
   }
 }
+
+@media (width <= 1300px) {
+  .wrapper {
+    padding: 40px 24px;
+  }
+}
+
+@media (width <= 1024px) {
+  .wrapper {
+    padding: 24px;
+  }
+}

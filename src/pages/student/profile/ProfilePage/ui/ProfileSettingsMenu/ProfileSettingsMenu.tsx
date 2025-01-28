@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { I18Namespace } from '@shared/config/i18n';
 import { EProfile } from '@shared/config/i18n/i18nTranslations';
+import { ROUTES } from '@shared/config/router';
 import { Button } from '@shared/ui/Button';
 
 import styles from './ProfileSettingsMenu.module.scss';
@@ -35,7 +36,7 @@ export const ProfileSettingsMenu = ({ handleOpen, email }: ProfileSettingsMenuPr
           </div>
 
           <div className={styles.buttons}>
-            <Button size="full" variant="secondary">
+            <Button isLink size="full" variant="secondary" href={ROUTES.auth.restore.page}>
               {t(EProfile.SETTINGS_MENU_FIRST_BUTTON)}
             </Button>
           </div>

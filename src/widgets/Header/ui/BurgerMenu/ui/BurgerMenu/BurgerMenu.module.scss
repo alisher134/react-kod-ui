@@ -1,0 +1,58 @@
+@use '@app/styles/_variables' as *;
+
+.open-button {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: $gray;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  min-height: 100dvh;
+  overflow-y: auto;
+  background-color: $black;
+  transform: translateX(100%) translateZ(0);
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: $gray-dark;
+
+    .close-button {
+      outline: none;
+      border: none;
+      background: transparent;
+      color: $gray;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 45px 78px 24px;
+
+    .nav {
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+      }
+    }
+  }
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

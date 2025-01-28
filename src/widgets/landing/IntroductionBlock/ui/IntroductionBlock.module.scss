@@ -46,3 +46,31 @@
     }
   }
 }
+
+@media screen and (width <= 1300px) {
+  .introduction {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (width <= 960px) {
+  .introduction {
+    padding: 32px 24px;
+
+    .container {
+      flex-direction: column;
+      gap: 42px;
+
+      .title {
+        margin-top: 16px;
+        line-height: 120%;
+        font-size: 30px;
+      }
+
+      .link {
+        margin-top: 16px;
+        width: 100%;
+      }
+    }
+  }
+}

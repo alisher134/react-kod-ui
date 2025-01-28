@@ -16,3 +16,14 @@
     place-content: center center;
   }
 }
+
+@media screen and (width <= 960px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 40px 24px;
+
+    .container {
+      height: 460px;
+    }
+  }
+}

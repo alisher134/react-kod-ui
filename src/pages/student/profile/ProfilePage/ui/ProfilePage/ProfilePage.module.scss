@@ -53,3 +53,20 @@
     }
   }
 }
+
+@media screen and (width <= 960px) {
+  .wrapper {
+    &.is-open {
+      .profile {
+        max-width: 1172px;
+
+        .top {
+          .settings-button {
+            transition: none;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

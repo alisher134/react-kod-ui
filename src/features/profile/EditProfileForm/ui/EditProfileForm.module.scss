@@ -31,3 +31,26 @@
     gap: 20px;
   }
 }
+
+@media screen and (width <= 860px) {
+  .form {
+    .container {
+      .top {
+        flex-direction: column;
+        gap: 15px;
+
+        .name {
+          gap: 15px;
+        }
+      }
+    }
+
+    .buttons {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

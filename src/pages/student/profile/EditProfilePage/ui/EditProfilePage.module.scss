@@ -10,3 +10,14 @@
     }
   }
 }
+
+@media screen and (width <= 960px) {
+  .profile {
+    .container {
+      .title {
+        margin-bottom: 24px;
+        font-size: 26px;
+      }
+    }
+  }
+}

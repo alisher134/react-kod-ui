@@ -48,3 +48,27 @@
     }
   }
 }
+
+@media screen and (width <= 1300px) {
+  .advantages {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (width <= 960px) {
+  .advantages {
+    padding: 32px 24px;
+
+    .container {
+      .title {
+        line-height: 120%;
+        font-size: 34px;
+      }
+    }
+
+    .advantages-container {
+      flex-direction: column;
+      margin-top: 24px;
+    }
+  }
+}

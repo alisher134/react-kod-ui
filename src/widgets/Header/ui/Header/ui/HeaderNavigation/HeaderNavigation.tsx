@@ -1,4 +1,4 @@
-import { useHeaderMenuData } from '@widgets/Header/model/data/headerData.ts';
+import { useHeaderMenuData } from '@widgets/Header/model/data/headerData';
 import { INavigation } from '@widgets/Header/model/types/headerTypes';
 
 import { HeaderCourseMenu } from '../HeaderCourseMenu/HeaderCourseMenu';

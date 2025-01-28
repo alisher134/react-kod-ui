@@ -24,7 +24,7 @@ export const Button = ({
 }: ButtonProps) => {
   if (isLink)
     return (
-      <a className={clsx(styles.button, className, styles[size], styles[variant])} {...props}>
+      <a className={clsx(styles.button, styles[size], styles[variant], className)} {...props}>
         {prefix && <span className={styles.icon}>{prefix}</span>}
         {children}
         {suffix && <span className={styles.icon}>{suffix}</span>}
@@ -32,7 +32,7 @@ export const Button = ({
     );
 
   return (
-    <button className={clsx(styles.button, className, styles[size], styles[variant])} {...props}>
+    <button className={clsx(styles.button, styles[size], styles[variant], className)} {...props}>
       {prefix && <span className={styles.icon}>{prefix}</span>}
       {children}
       {suffix && <span className={styles.icon}>{suffix}</span>}

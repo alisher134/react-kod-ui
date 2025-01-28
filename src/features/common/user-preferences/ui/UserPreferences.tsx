@@ -32,10 +32,8 @@ export const UserPreferences = ({ className }: UserPreferencesProps) => {
   return (
     <div className={clsx(styles.preferences, className)}>
       <div className={styles['avatar-container']}>
-        <>
-          <CircleUser />
-          <span>{isLoggedIn ? profile?.firstName : t(ELanding.LOGIN)}</span>
-        </>
+        <CircleUser />
+        <span>{isLoggedIn ? profile?.firstName : t(ELanding.LOGIN)}</span>
       </div>
       <ul className={styles.dropdown}>
         <li className={styles.item}>
