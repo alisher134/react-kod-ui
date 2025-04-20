@@ -12,6 +12,7 @@ const supportedLngs: TLangs[] = ['kz', 'ru'];
 
 export const I18Namespace = {
   landing: 'landing',
+  catalog: 'catalog',
   auth: 'auth',
   profile: 'profile',
   help: 'help',

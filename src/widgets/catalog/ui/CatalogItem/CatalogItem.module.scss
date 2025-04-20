@@ -1,0 +1,58 @@
+@use '@app/styles/_variables' as *;
+
+.item {
+  list-style: none;
+
+  .link {
+    display: block;
+    width: 300px;
+
+    .thumbnail {
+      min-height: 100px;
+
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 100%;
+
+      .title {
+        margin: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-weight: 500;
+        transition: $primary-transition;
+      }
+
+      .description {
+        display: -webkit-box;
+        margin: 0;
+        margin-bottom: 12px;
+        overflow: hidden;
+        line-height: 20px;
+        font-size: 14px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border: 1px solid $primary;
+      border-radius: 999px;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    &:hover {
+      .info {
+        .title {
+          color: $primary-hover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use '@app/styles/_variables' as *;
+
+.lessons {
+  border: 1px solid $gray-dark;
+  border-radius: 10px;
+
+  .heading {
+    margin: 0;
+    padding: 16px;
+    border-bottom: 1px solid $gray-dark;
+    font-size: 20px;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+
+    .item {
+      border-bottom: 1px solid $gray-dark;
+      list-style: none;
+      transition: $primary-transition;
+
+      .link {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        padding: 16px;
+
+        .badge {
+          display: flex;
+          flex-shrink: 0;
+          justify-content: center;
+          align-items: center;
+          width: 24px;
+          height: 25px;
+          border: 1px solid $gray-dark;
+          border-radius: 9999px;
+          font-size: 12px;
+        }
+
+        .info {
+          .title {
+            margin: 0;
+            font-weight: 500;
+          }
+
+          .description {
+            color: $gray;
+          }
+        }
+      }
+
+      &:hover {
+        background: $gray-dark;
+      }
+    }
+  }
+}

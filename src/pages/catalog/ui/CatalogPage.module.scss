@@ -1,0 +1,23 @@
+@use '@app/styles/_variables' as *;
+
+.catalog {
+  .container {
+    margin: 0 auto;
+    padding: 40px 0 70px;
+    max-width: $layout-max-width;
+
+    .top {
+      .title {
+        line-height: 120%;
+        font-weight: 400;
+        font-size: 46px;
+      }
+
+      .subtitle {
+        color: $gray;
+        line-height: 0;
+        font-size: 18px;
+      }
+    }
+  }
+}

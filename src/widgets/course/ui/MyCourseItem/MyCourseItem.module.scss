@@ -1,0 +1,47 @@
+@use '@app/styles/_variables' as *;
+
+.item {
+  width: 650px;
+  border-radius: 10px;
+  background-color: $gray-dark;
+  list-style: none;
+
+  .top {
+    display: flex;
+    gap: 32px;
+    padding: 20px 24px 0;
+
+    .image {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .title {
+      margin: 0;
+      line-height: 120%;
+      font-weight: 700;
+      font-size: 26px;
+    }
+  }
+
+  .progress {
+    padding: 12px 24px 0;
+  }
+
+  .last-active {
+    margin: 10px 0;
+    padding: 0 24px;
+  }
+
+  .action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 0 24px;
+    min-height: 92px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: $violet-dark;
+  }
+}

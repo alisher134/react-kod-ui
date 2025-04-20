@@ -19,6 +19,18 @@ export const ROUTES = {
       page: '/auth/reset',
     },
   },
+  catalog: {
+    route: 'catalog',
+    page: '/catalog',
+  },
+  course: {
+    route: 'course',
+    page: '/course',
+  },
+  lesson: {
+    route: 'lesson',
+    page: '/lesson',
+  },
   student: {
     route: 'student',
     courses: {

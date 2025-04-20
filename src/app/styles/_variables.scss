@@ -9,6 +9,12 @@ $gray-stroke: #4d5064;
 $gray-light: #dad9de;
 $gray: #afb2bf;
 $gradient: linear-gradient(93.33deg, #d77be6 9.26%, #be63e6 42.32%, #6c38cc 104.58%);
+$gradient-opacity: linear-gradient(
+  93.33deg,
+  rgb(215 123 230 / 30%) 9.26%,
+  rgb(190 99 230 / 30%) 42.32%,
+  rgb(108 56 204 / 30%) 104.58%
+);
 $white: #fafafa;
 $green: #38cc6c;
 $yellow: #fdf41a;

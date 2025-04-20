@@ -15,5 +15,12 @@ export const useProfile = () => {
     enabled: !!accessToken,
   });
 
-  return { profile, isLoading };
+  const { data: progress, isLoading: isProgressLoading } = useQuery({
+    queryKey: ['me/progress'],
+    queryFn: () => profileService.meProgress(),
+    select: ({ data }) => data,
+    enabled: !!accessToken,
+  });
+
+  return { profile, isLoading, progress, isProgressLoading };
 };

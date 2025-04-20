@@ -1,0 +1,89 @@
+@use '@app/styles/_variables' as *;
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 300px;
+  height: 100vh;
+  overflow-y: auto;
+  background: $gray-dark;
+
+  .top {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    .logo {
+      width: 120px;
+    }
+  }
+
+  .info {
+    margin-bottom: 10px;
+    padding: 0 20px;
+
+    .title {
+      margin: 0 0 10px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+
+  .lessons {
+    .list {
+      margin: 0;
+      padding: 0;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 7px;
+
+        .link {
+          display: flex;
+          flex-grow: 1;
+          align-items: center;
+          column-gap: 10px;
+          padding: 20px 16px;
+          width: 100%;
+          min-height: 56px;
+          background: $violet-dark;
+          color: $gray-light;
+          text-align: left;
+          font-size: 18px;
+          transition: $primary-transition;
+          text-wrap: balance;
+        }
+
+        &.complete {
+          .link {
+            border-right: 5px solid $secondary;
+          }
+        }
+
+        &.active {
+          .link {
+            background: $gradient-opacity;
+          }
+        }
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $violet-dark;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: $gray-stroke;
+  }
+}

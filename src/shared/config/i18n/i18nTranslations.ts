@@ -85,6 +85,13 @@ export enum ELanding {
   FOOTER_MATERIALS_ITEMS_SECOND = 'footer.materials.items.second',
 }
 
+export enum ECatalog {
+  TITLE = 'title',
+  DESCRIPTION = 'description',
+  CRUMBS_MAIN = 'crumbs.main',
+  CRUMBS_CATALOG = 'crumbs.catalog',
+}
+
 export enum EAuth {
   LOGIN_TITLE = 'login.title',
   LOGIN_REGISTRATION = 'login.registration',

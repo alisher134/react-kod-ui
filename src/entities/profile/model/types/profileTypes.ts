@@ -1,6 +1,21 @@
 export interface IProfileResponse {
   profile: IProfile;
 }
+
+export interface IProgressResponse {
+  id: string;
+  title: string;
+  thumbnail: string;
+  totalLessons: number;
+  completedLessons: number;
+  progress: number;
+  lastAccessed: string;
+  lastLesson: {
+    id: string;
+    slug: string;
+    position: number;
+  };
+}
 export interface IProfile {
   id: string;
   createdAt: string;

@@ -1,4 +1,4 @@
-import { ChartArea, CircleHelp, GraduationCap, User, Users } from 'lucide-react';
+import { CircleHelp, GraduationCap, User } from 'lucide-react';
 
 import { ETranslation } from '@shared/config/i18n/i18nTranslations';
 import { ROUTES } from '@shared/config/router';
@@ -12,19 +12,9 @@ export const sidebarMenuData = (t: (key: string) => string): ISidebarMenuItem[] 
     link: ROUTES.student.courses.page,
   },
   {
-    title: t(ETranslation.SIDEBAR_MENU_MAP),
-    icon: ChartArea,
-    link: '',
-  },
-  {
     title: t(ETranslation.SIDEBAR_MENU_PROFILE),
     icon: User,
     link: ROUTES.student.my_profile.page,
-  },
-  {
-    title: t(ETranslation.SIDEBAR_MENU_COMMUNITY),
-    icon: Users,
-    link: '',
   },
   {
     title: t(ETranslation.SIDEBAR_MENU_HELP),

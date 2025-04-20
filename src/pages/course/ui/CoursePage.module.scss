@@ -1,0 +1,70 @@
+@use '@app/styles/_variables' as *;
+
+.course {
+  .container {
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 0 70px;
+    max-width: $layout-max-width;
+
+    .info {
+      margin-bottom: 32px;
+      padding: 20px 24px;
+      border-radius: 10px;
+      background-color: $gray-dark;
+
+      .views {
+        display: inline;
+        padding: 5px 10px;
+        border: 1px solid $primary;
+        border-radius: 25px;
+        font-size: 12px;
+      }
+    }
+
+    .progress {
+      margin-bottom: 32px;
+      padding: 20px 24px;
+      border-radius: 10px;
+      background-color: $gray-dark;
+    }
+
+    .bottom {
+      display: flex;
+      gap: 32px;
+
+      .information {
+        position: sticky;
+        top: 30px;
+        padding: 16px;
+        min-width: 350px;
+        height: 180px;
+        border: 1px solid $gray-dark;
+        border-radius: 10px;
+
+        .title {
+          margin: 0 0 16px;
+          font-size: 24px;
+        }
+
+        .label {
+          margin: 0 0 3px;
+          color: $gray;
+          font-weight: 400;
+          font-size: 14px;
+        }
+
+        .value {
+          margin: 0 0 20px;
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .attention {
+      color: $red;
+      text-align: center;
+    }
+  }
+}
