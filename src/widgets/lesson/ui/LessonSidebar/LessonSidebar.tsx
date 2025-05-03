@@ -43,7 +43,7 @@ export const LessonSidebar = () => {
             >
               <Link to={ROUTES.lesson.page + `/${lesson.slug}`} className={styles.link}>
                 <img src={PlayIcon} alt="play" />
-                <span>{lesson.position}</span>
+                <span>{lesson.position}.</span>
                 {lesson.title}
               </Link>
             </li>

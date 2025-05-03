@@ -3,7 +3,7 @@ export const API_CONFIG = {
   AUTH: {
     LOGIN: '/auth/login',
     REGISTER: '/auth/register',
-    RESTORE: '/auth/restore-password',
+    RESTORE: '/auth/forgot-password',
     RESET: '/auth/restore-password',
     REFRESH: '/auth/refresh',
     LOGOUT: '/auth/logout',
@@ -15,6 +15,9 @@ export const API_CONFIG = {
   },
   lesson: {
     DEFAULT: '/lesson',
+  },
+  comment: {
+    DEFAULT: '/comment',
   },
   progress: {
     DEFAULT: '/progress',

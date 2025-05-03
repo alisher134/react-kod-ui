@@ -17,7 +17,26 @@ export interface ILesson {
     description: string;
     views: number;
   };
+  comments: IComment[];
   userProgress: IUserProgress[];
+}
+
+export interface IComment {
+  id: string;
+  createdAt: string;
+  text: string;
+  user: ICommentUser;
+}
+
+export interface ICommentBody {
+  text: string;
+}
+
+export interface ICommentUser {
+  id: string;
+  avatarPath: string;
+  firstName: string;
+  lastName: string;
 }
 
 export interface ILessonComplete {

@@ -1,17 +1,18 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 import { useParams } from 'react-router';
 
 import { courseService } from '@entities/course/api/courseService';
 
 import { lessonService } from '../api/lessonService';
-import { ILessonComplete } from '../types/lessonTypes';
+import { ICommentBody, ILessonComplete } from '../types/lessonTypes';
 
 export const useLesson = () => {
   const params = useParams();
   const slug = params.slug ?? '';
   const queryClient = useQueryClient();
 
-  const { data: lessonBySlug } = useQuery({
+  const { data: lessonBySlug, isLoading } = useQuery({
     queryKey: ['course/slug', slug],
     queryFn: () => lessonService.getBySlug(slug),
     select: ({ data }) => data,
@@ -46,11 +47,27 @@ export const useLesson = () => {
     },
   });
 
+  const { mutateAsync: lessonComment } = useMutation({
+    mutationKey: ['lesson/comment'],
+    mutationFn: (data: ICommentBody) => lessonService.leaveComment(data, lessonBySlug?.id ?? ''),
+    onSuccess() {
+      toast.success('Комментарий успешно опубликован');
+      queryClient.invalidateQueries({ queryKey: ['course/slug', slug] });
+    },
+    onError() {
+      toast.error(
+        'Комментарий успешно опубликованНе удалось отправить комментарий. Попробуй ещё раз.',
+      );
+    },
+  });
+
   return {
     lessonBySlug,
     courseLessons,
     courseProgress,
     courseTitle,
     lessonCompleteMutate,
+    isLoading,
+    lessonComment,
   };
 };

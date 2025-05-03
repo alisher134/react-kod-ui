@@ -3,7 +3,7 @@ import { ICourseLesson } from '@entities/course/types/courseTypes';
 import { axiosInstance, axiosPublic } from '@shared/api';
 import { API_CONFIG } from '@shared/config/api';
 
-import { ILesson, ILessonComplete } from '../types/lessonTypes';
+import { IComment, ICommentBody, ILesson, ILessonComplete } from '../types/lessonTypes';
 
 export const lessonService = {
   async getBySlug(slug: string) {
@@ -18,5 +18,9 @@ export const lessonService = {
 
   async complete(data: ILessonComplete) {
     return await axiosInstance.put(API_CONFIG.progress.DEFAULT, data);
+  },
+
+  async leaveComment(data: ICommentBody, lessonId: string) {
+    return await axiosInstance.post<IComment>(API_CONFIG.comment.DEFAULT + `/${lessonId}`, data);
   },
 };

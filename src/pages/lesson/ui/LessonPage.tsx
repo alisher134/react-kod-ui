@@ -2,6 +2,9 @@ import KinescopePlayer from '@kinescope/react-kinescope-player';
 import { Check, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+import { CommentList } from '@widgets/lesson/ui/LessonComment';
+import { AddComment } from '@widgets/lesson/ui/LessonComment/ui/AddComment/AddComment';
+
 import { useLesson } from '@entities/lesson/hooks/useLesson';
 
 import { Button } from '@shared/ui/Button';
@@ -10,7 +13,7 @@ import { Player } from '@shared/ui/Player/ui/Player';
 import styles from './LessonPage.module.scss';
 
 const LessonPage = () => {
-  const { lessonBySlug, lessonCompleteMutate } = useLesson();
+  const { lessonBySlug, lessonCompleteMutate, isLoading } = useLesson();
   const playerRef = useRef<KinescopePlayer | null>(null);
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
@@ -34,7 +37,9 @@ const LessonPage = () => {
     <div className={styles.lesson}>
       <div className={styles.info}>
         <div className={styles.action}>
-          <h1>{lessonBySlug?.title}</h1>
+          <h1>
+            {lessonBySlug?.position}. {lessonBySlug?.title}
+          </h1>
 
           {isCompleted ? (
             <Button variant="secondary" prefix={<X />} onClick={handleCancel}>
@@ -46,10 +51,19 @@ const LessonPage = () => {
             </Button>
           )}
         </div>
-        <p>{lessonBySlug?.description}</p>
       </div>
 
-      <Player height={700} ref={playerRef} videoId={lessonBySlug?.lessonUrl ?? ''} />
+      <Player height={550} ref={playerRef} videoId={lessonBySlug?.lessonUrl ?? ''} />
+
+      <div>
+        <p className={styles.description}>{lessonBySlug?.description}</p>
+      </div>
+
+      <div className={styles.comment}>
+        <CommentList list={lessonBySlug?.comments ?? []} isLoading={isLoading} />
+
+        <AddComment />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,46 @@
+@use '@app/styles/_variables' as *;
+
+.item {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+
+  .container {
+    width: 100%;
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .name {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .date {
+        color: $gray;
+        font-size: 14px;
+      }
+    }
+
+    .text {
+      margin: 10px 0;
+      padding: 18px 30px;
+      border-radius: 0 10px 10px;
+      background-color: $gray-dark;
+      line-height: 30px;
+      font-size: 18px;
+    }
+  }
+}
