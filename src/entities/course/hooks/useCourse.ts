@@ -13,6 +13,12 @@ export const useCourse = () => {
     select: ({ data }) => data,
   });
 
+  const { data: coursesPopular, isPending: isPopularPending } = useQuery({
+    queryKey: ['course/popular'],
+    queryFn: () => courseService.getPopular(),
+    select: ({ data }) => data,
+  });
+
   const { data: coursesBySlug } = useQuery({
     queryKey: ['course/slug'],
     queryFn: () => courseService.getBySlug(slug),
@@ -39,5 +45,14 @@ export const useCourse = () => {
     mutationFn: (courseId: string) => courseService.views(courseId),
   });
 
-  return { courses, isCoursesPending, coursesBySlug, courseProgress, courseLessons, viewsMutation };
+  return {
+    courses,
+    isCoursesPending,
+    coursesBySlug,
+    courseProgress,
+    courseLessons,
+    viewsMutation,
+    coursesPopular,
+    isPopularPending,
+  };
 };

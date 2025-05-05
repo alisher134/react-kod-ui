@@ -8,6 +8,15 @@ export interface ICourse {
   views: number;
 }
 
+export interface ISearch {
+  courses: ICourse[];
+  length: number;
+}
+
+export interface ISearchCourse {
+  searchTerm: string;
+}
+
 export interface ICourseLesson {
   title: string;
   slug: string;

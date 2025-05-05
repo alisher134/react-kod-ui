@@ -1,9 +1,4 @@
-@use '@app/styles/_variables' as *;
-
-.main {
-  .title {
-    color: $gray-light;
-    font-weight: 400;
-    font-size: 36px;
-  }
+.courses {
+  display: flex;
+  justify-content: space-between;
 }

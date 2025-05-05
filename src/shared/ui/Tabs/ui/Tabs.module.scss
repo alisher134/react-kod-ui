@@ -1,0 +1,49 @@
+@use '@app/styles/_variables' as *;
+
+.wrapper {
+  .tabs {
+    margin-bottom: 20px;
+    padding: 10px 12px;
+    width: 420px;
+    border-radius: 10px;
+    background-color: $gray-dark;
+
+    .list {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+
+      .item {
+        list-style: none;
+
+        .button {
+          padding: 8px 16px;
+          border: 0;
+          border-radius: 10px;
+          background: none;
+          color: $white;
+          transition: $primary-transition;
+          cursor: pointer;
+
+          &.active {
+            background-color: $primary;
+
+            &:hover {
+              background-color: $primary;
+            }
+          }
+
+          &:hover {
+            background-color: $violet-dark;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+}

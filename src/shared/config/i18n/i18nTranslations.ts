@@ -88,6 +88,11 @@ export enum ELanding {
 export enum ECatalog {
   TITLE = 'title',
   DESCRIPTION = 'description',
+  ABOUT = 'about',
+  START = 'start',
+  MY_COURSES = 'myCourses',
+  POPULAR = 'popular',
+  ALL = 'all',
   CRUMBS_MAIN = 'crumbs.main',
   CRUMBS_CATALOG = 'crumbs.catalog',
 }

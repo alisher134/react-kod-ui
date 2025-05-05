@@ -1,11 +1,21 @@
 import { axiosInstance, axiosPublic } from '@shared/api';
 import { API_CONFIG } from '@shared/config/api';
 
-import { ICourse, ICourseLesson, IProgress } from '../types/courseTypes';
+import { ICourse, ICourseLesson, IProgress, ISearch } from '../types/courseTypes';
 
 export const courseService = {
   async getCatalog() {
     return await axiosPublic.get<ICourse[]>(API_CONFIG.course.DEFAULT);
+  },
+
+  async searchCourse(searchTerm: string) {
+    return await axiosPublic.get<ISearch>(API_CONFIG.course.DEFAULT + '/search', {
+      params: { searchTerm },
+    });
+  },
+
+  async getPopular() {
+    return await axiosPublic.get<ICourse[]>(API_CONFIG.course.DEFAULT + '/popular');
   },
 
   async getBySlug(slug: string) {

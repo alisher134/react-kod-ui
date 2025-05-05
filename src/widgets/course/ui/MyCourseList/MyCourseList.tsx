@@ -1,5 +1,3 @@
-import { CatalogList } from '@widgets/catalog';
-
 import { useProfile } from '@entities/profile';
 
 import { MyCourseItem } from '../MyCourseItem/MyCourseItem';
@@ -21,11 +19,6 @@ export const MyCourseList = () => {
           <>Вы еще не начали проходить курсы</>
         )}
       </ul>
-
-      <div className={styles.popular}>
-        <h3>Популярные курсы</h3>
-        <CatalogList />
-      </div>
     </div>
   );
 };

@@ -1,0 +1,45 @@
+@use '@app/styles/_variables' as *;
+
+.modal {
+  padding: 20px 40px;
+  width: 700px;
+  background-color: $gray-dark;
+
+  .form {
+    padding-bottom: 40px;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+
+    .item {
+      margin-bottom: 20px;
+      list-style: none;
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          margin: 0;
+          background: $gradient;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .description {
+        display: -webkit-box;
+        margin: 10px 0 0;
+        overflow: hidden;
+        line-height: 27px;
+        font-weight: 400;
+        font-size: 18px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+}

@@ -1,58 +1,56 @@
 @use '@app/styles/_variables' as *;
 
 .item {
+  width: 400px;
+  border-radius: 10px;
+  background: $gray-dark;
   list-style: none;
 
-  .link {
-    display: block;
-    width: 300px;
-
-    .thumbnail {
-      min-height: 100px;
-
-      > img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .info {
+  .thumbnail {
+    > img {
       width: 100%;
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
 
-      .title {
-        margin: 0;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        font-weight: 500;
-        transition: $primary-transition;
-      }
+  .info {
+    padding: 20px;
+    width: 100%;
 
-      .description {
-        display: -webkit-box;
-        margin: 0;
-        margin-bottom: 12px;
-        overflow: hidden;
-        line-height: 20px;
-        font-size: 14px;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-      }
+    .title {
+      margin: 0;
+      padding-bottom: 12px;
+      font-weight: 500;
+      font-size: 21px;
     }
 
-    .badge {
-      padding: 5px 10px;
-      border: 1px solid $primary;
-      border-radius: 999px;
-      font-weight: 400;
-      font-size: 12px;
+    .description {
+      display: -webkit-box;
+      margin: 0;
+      margin-bottom: 12px;
+      overflow: hidden;
+      line-height: 20px;
+      font-size: 14px;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
 
-    &:hover {
-      .info {
-        .title {
-          color: $primary-hover;
-        }
-      }
+    .lessons {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: $violet-dark;
   }
 }

@@ -19,5 +19,6 @@ container.render(
       <RouterProvider router={router} />
       <Toaster toastOptions={toastOptions} gutter={20} />
     </QueryProvider>
+    <div id="modal-root"></div>
   </StrictMode>,
 );

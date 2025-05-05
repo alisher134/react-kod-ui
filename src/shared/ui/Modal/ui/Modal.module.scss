@@ -1,0 +1,49 @@
+@use '@app/styles/_variables' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(7 1 5 / 50%);
+
+  .modal {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: $gray-dark;
+
+    .top {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      padding: 20px 20px 0;
+
+      .close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: none;
+        color: $gray;
+        transition: $primary-transition;
+        cursor: pointer;
+
+        &:hover {
+          background: $violet-dark;
+        }
+      }
+    }
+  }
+}
+
+.modal-open {
+  display: flex;
+}
