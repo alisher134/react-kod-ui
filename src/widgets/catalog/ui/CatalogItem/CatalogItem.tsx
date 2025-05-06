@@ -12,6 +12,10 @@ import styles from './CatalogItem.module.scss';
 export const CatalogItem = ({ item }: { item: ICourse }) => {
   const { t } = useTranslation(I18Namespace.catalog);
 
+  if (!item || !item.slug) {
+    return null;
+  }
+
   return (
     <li className={styles.item}>
       <div className={styles.thumbnail}>
