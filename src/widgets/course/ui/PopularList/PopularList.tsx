@@ -1,12 +1,18 @@
+import { useQuery } from '@tanstack/react-query';
+
 import { CatalogItem } from '@widgets/catalog/ui/CatalogItem/CatalogItem';
 import { CatalogListSkeleton } from '@widgets/catalog/ui/CatalogList/CatalogList.skeleton';
 
-import { useCourse } from '@entities/course/hooks/useCourse';
+import { courseService } from '@entities/course/api/courseService';
 
 import styles from './PopularList.module.scss';
 
 export const PopularList = () => {
-  const { coursesPopular, isPopularPending } = useCourse();
+  const { data: coursesPopular, isLoading: isPopularPending } = useQuery({
+    queryKey: ['course/popular'],
+    queryFn: () => courseService.getPopular(),
+    select: ({ data }) => data,
+  });
 
   return (
     <ul className={styles['popular-list']}>

@@ -1,4 +1,6 @@
-import { useCourse } from '@entities/course/hooks/useCourse';
+import { useQuery } from '@tanstack/react-query';
+
+import { courseService } from '@entities/course/api/courseService';
 
 import { CatalogItem } from '../CatalogItem/CatalogItem';
 
@@ -6,7 +8,11 @@ import styles from './CatalogList.module.scss';
 import { CatalogListSkeleton } from './CatalogList.skeleton';
 
 export const CatalogList = () => {
-  const { courses, isCoursesPending } = useCourse();
+  const { data: courses, isLoading: isCoursesPending } = useQuery({
+    queryKey: ['catalog/course'],
+    queryFn: () => courseService.getCatalog(),
+    select: ({ data }) => data,
+  });
 
   if (isCoursesPending) {
     return <CatalogListSkeleton />;
