@@ -14,15 +14,21 @@ export const PopularList = () => {
     select: ({ data }) => data,
   });
 
+  if (isPopularPending) {
+    return (
+      <ul className={styles['popular-list']}>
+        <CatalogListSkeleton />
+      </ul>
+    );
+  }
+
+  if (!Array.isArray(coursesPopular) || coursesPopular.length === 0) {
+    return <>Ничего не найдено</>;
+  }
+
   return (
     <ul className={styles['popular-list']}>
-      {isPopularPending ? (
-        <CatalogListSkeleton />
-      ) : coursesPopular?.length ? (
-        coursesPopular?.map((course) => <CatalogItem key={course.id} item={course} />)
-      ) : (
-        <>Ничего не найдено</>
-      )}
+      {coursesPopular?.map((course) => <CatalogItem key={course.id} item={course} />)}
     </ul>
   );
 };

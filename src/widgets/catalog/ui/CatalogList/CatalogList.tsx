@@ -15,7 +15,11 @@ export const CatalogList = () => {
   });
 
   if (isCoursesPending) {
-    return <CatalogListSkeleton />;
+    return (
+      <ul className={styles['catalog-list']}>
+        <CatalogListSkeleton />
+      </ul>
+    );
   }
 
   if (!Array.isArray(courses) || courses.length === 0) {
