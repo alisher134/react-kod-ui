@@ -8,15 +8,19 @@ import { CatalogListSkeleton } from './CatalogList.skeleton';
 export const CatalogList = () => {
   const { courses, isCoursesPending } = useCourse();
 
+  if (isCoursesPending) {
+    return <CatalogListSkeleton />;
+  }
+
+  if (!Array.isArray(courses) || courses.length === 0) {
+    return <>Ничего не найдено</>;
+  }
+
   return (
     <ul className={styles['catalog-list']}>
-      {isCoursesPending ? (
-        <CatalogListSkeleton />
-      ) : courses?.length ? (
-        courses?.map((course) => <CatalogItem key={course.id} item={course} />)
-      ) : (
-        <>Ничего не найдено</>
-      )}
+      {courses.map((course) => (
+        <CatalogItem key={course.id} item={course} />
+      ))}
     </ul>
   );
 };

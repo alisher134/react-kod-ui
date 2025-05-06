@@ -7,13 +7,13 @@ export const useCourse = () => {
   const params = useParams();
   const slug = params.slug ?? '';
 
-  const { data: courses, isPending: isCoursesPending } = useQuery({
+  const { data: courses, isLoading: isCoursesPending } = useQuery({
     queryKey: ['catalog/course'],
     queryFn: () => courseService.getCatalog(),
     select: ({ data }) => data,
   });
 
-  const { data: coursesPopular, isPending: isPopularPending } = useQuery({
+  const { data: coursesPopular, isLoading: isPopularPending } = useQuery({
     queryKey: ['course/popular'],
     queryFn: () => courseService.getPopular(),
     select: ({ data }) => data,
