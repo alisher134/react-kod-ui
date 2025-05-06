@@ -33,9 +33,11 @@ export const CatalogItem = ({ item }: { item: ICourse }) => {
         <Button isLink variant="secondary" href={'/course/' + item.slug}>
           {t(ECatalog.ABOUT)}
         </Button>
-        <Button isLink href={'/lesson/' + item.lessons[1].slug}>
-          {t(ECatalog.START)}
-        </Button>
+        {item.lessons[1].slug && (
+          <Button isLink href={'/lesson/' + item.lessons[1].slug}>
+            {t(ECatalog.START)}
+          </Button>
+        )}
       </div>
     </li>
   );
