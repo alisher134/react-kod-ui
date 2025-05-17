@@ -13,7 +13,11 @@ import styles from './AddComment.module.scss';
 export const AddComment = () => {
   const { lessonComment } = useLesson();
 
-  const { register: registerInput, handleSubmit } = useForm<ICommentBody>({
+  const {
+    register: registerInput,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ICommentBody>({
     mode: 'onSubmit',
     resolver: zodResolver(CommentSchema),
   });
@@ -25,7 +29,7 @@ export const AddComment = () => {
   return (
     <div className={styles.comment}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <Textarea {...registerInput('text')} placeholder="Введите сообщение" />
+        <Textarea {...registerInput('text')} error={errors.text} placeholder="Введите сообщение" />
 
         <div className={styles.button}>
           <Button variant="secondary" size="lg">
