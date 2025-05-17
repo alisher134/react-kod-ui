@@ -10,17 +10,29 @@ export const RegisterSchema: ZodType<IRegisterFormValues> = z.object({
   email: z
     .string()
     .nonempty({ message: i18n.t(ETranslation.VALIDATION_EMAIL_REQUIRED) })
-    .email({ message: i18n.t(ETranslation.VALIDATION_EMAIL_INVALID) }),
+    .email({ message: i18n.t(ETranslation.VALIDATION_EMAIL_INVALID) })
+    .refine((val) => !/[<>]/.test(val), {
+      message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+    }),
   firstName: z
     .string()
     .nonempty({ message: i18n.t(ETranslation.VALIDATION_FIRST_NAME_REQUIRED) })
-    .min(2, { message: i18n.t(ETranslation.VALIDATION_FIRST_NAME_LENGTH) }),
+    .min(2, { message: i18n.t(ETranslation.VALIDATION_FIRST_NAME_LENGTH) })
+    .refine((val) => !/[<>]/.test(val), {
+      message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+    }),
   lastName: z
     .string()
     .nonempty({ message: i18n.t(ETranslation.VALIDATION_LAST_NAME_REQUIRED) })
-    .min(2, { message: i18n.t(ETranslation.VALIDATION_LAST_NAME_LENGTH) }),
+    .min(2, { message: i18n.t(ETranslation.VALIDATION_LAST_NAME_LENGTH) })
+    .refine((val) => !/[<>]/.test(val), {
+      message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+    }),
   password: z
     .string()
     .nonempty({ message: i18n.t(ETranslation.VALIDATION_PASSWORD_REQUIRED) })
-    .min(8, { message: t(ETranslation.VALIDATION_PASSWORD_LENGTH) }),
+    .min(8, { message: t(ETranslation.VALIDATION_PASSWORD_LENGTH) })
+    .refine((val) => !/[<>]/.test(val), {
+      message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+    }),
 });

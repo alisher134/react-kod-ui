@@ -31,6 +31,7 @@ export enum ETranslation {
   VALIDATION_LAST_NAME_REQUIRED = 'validation.lastName.required',
   VALIDATION_LAST_NAME_LENGTH = 'validation.lastName.min',
   VALIDATION_DESCRIPTION_LENGTH = 'validation.description.min',
+  VALIDATION_HTML_ERROR = 'validation.html.error',
 
   CRUMBS_COURSE = 'crumbs.course',
   CRUMBS_MAP = 'crumbs.map',

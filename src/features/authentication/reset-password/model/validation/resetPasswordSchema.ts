@@ -11,11 +11,19 @@ export const ResetPasswordSchema: ZodType<IResetPasswordFormValues> = z
     password: z
       .string()
       .nonempty({ message: i18n.t(ETranslation.VALIDATION_PASSWORD_REQUIRED) })
-      .min(8, { message: t(ETranslation.VALIDATION_PASSWORD_LENGTH) }),
+      .min(8, { message: t(ETranslation.VALIDATION_PASSWORD_LENGTH) })
+      .refine((val) => !/[<>]/.test(val), {
+        message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+      }),
     passwordConfirm: z
       .string()
-      .nonempty({ message: i18n.t(ETranslation.VALIDATION_PASSWORD_CONFIRM_REQUIRED) }),
-    token: z.string(),
+      .nonempty({ message: i18n.t(ETranslation.VALIDATION_PASSWORD_CONFIRM_REQUIRED) })
+      .refine((val) => !/[<>]/.test(val), {
+        message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+      }),
+    token: z.string().refine((val) => !/[<>]/.test(val), {
+      message: i18n.t(ETranslation.VALIDATION_HTML_ERROR),
+    }),
   })
   .refine((data) => data.password === data.passwordConfirm, {
     message: i18n.t(ETranslation.VALIDATION_PASSWORD_CONFIRM_MATCH),
