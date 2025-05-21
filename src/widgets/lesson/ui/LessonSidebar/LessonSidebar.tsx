@@ -38,7 +38,7 @@ export const LessonSidebar = () => {
               key={lesson.slug}
               className={clsx(styles.item, {
                 [styles.active]: params.slug === lesson.slug,
-                [styles.complete]: lesson.userProgress[0].isCompleted,
+                [styles.complete]: lesson?.userProgress?.[0]?.isCompleted,
               })}
             >
               <Link to={ROUTES.lesson.page + `/${lesson.slug}`} className={styles.link}>
