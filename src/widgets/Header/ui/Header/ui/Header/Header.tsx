@@ -1,4 +1,3 @@
-import { useHeaderMenuData } from '@widgets/Header/model/data/headerData.ts';
 import { Logo } from '@widgets/Logo';
 
 import { UserPreferences } from '@features/common/user-preferences';
@@ -12,7 +11,7 @@ import { HeaderNavigation } from '../HeaderNavigation/HeaderNavigation';
 import styles from './Header.module.scss';
 
 export const Header = () => {
-  const { navMenuData } = useHeaderMenuData();
+  // const { navMenuData } = useHeaderMenuData();
   const { isMobile, isMobileS, isTablet } = useScreenSize();
 
   const isMobileOrTablet = isTablet || isMobile || isMobileS;
@@ -26,7 +25,7 @@ export const Header = () => {
           <BurgerMenu />
         ) : (
           <>
-            <HeaderNavigation menu={navMenuData} />
+            <HeaderNavigation menu={[]} />
 
             <LanguageSwitcher />
 

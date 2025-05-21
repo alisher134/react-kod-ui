@@ -43,6 +43,7 @@ export const useLesson = () => {
       if (courseId) {
         queryClient.invalidateQueries({ queryKey: ['course/progress', courseId] });
         queryClient.invalidateQueries({ queryKey: ['course/lessons', courseId] });
+        queryClient.invalidateQueries({ queryKey: ['course/slug', slug] });
       }
     },
   });

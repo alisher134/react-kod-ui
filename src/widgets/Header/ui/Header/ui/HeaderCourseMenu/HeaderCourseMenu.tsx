@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { ChevronRight, Database } from 'lucide-react';
-import { useCallback, useMemo, useState } from 'react';
-import { Link } from 'react-router';
+import { useCallback, useState } from 'react';
 
 import { ICourseNavigation } from '@widgets/Header/model/types/headerTypes';
 
@@ -20,13 +19,13 @@ export const HeaderCourseMenu = ({ menu }: HeaderCourseMenuProps) => {
     setHoveredSection(sectionId);
   }, []);
 
-  const handleMouseLeave = useCallback(() => {
-    setHoveredSection(null);
-  }, []);
+  // const handleMouseLeave = useCallback(() => {
+  //   setHoveredSection(null);
+  // }, []);
 
-  const groupMenu = useMemo(() => {
-    return menu.items.find((item) => item.title === hoveredSection);
-  }, [menu.items, hoveredSection]);
+  // const groupMenu = useMemo(() => {
+  //   return menu.items.find((item) => item.title === hoveredSection);
+  // }, [menu.items, hoveredSection]);
 
   return (
     <li className={styles['course-menu']}>
@@ -59,7 +58,7 @@ export const HeaderCourseMenu = ({ menu }: HeaderCourseMenuProps) => {
             </ul>
           </div>
 
-          <div className={styles.group}>
+          {/* <div className={styles.group}>
             {groupMenu && (
               <ul onMouseLeave={handleMouseLeave} className={styles['group-list']}>
                 {groupMenu.items.map((item, idx) => (
@@ -84,7 +83,7 @@ export const HeaderCourseMenu = ({ menu }: HeaderCourseMenuProps) => {
                 ))}
               </ul>
             )}
-          </div>
+          </div> */}
         </div>
       </ul>
     </li>

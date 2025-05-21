@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 
-import commonIcon from '@shared/assets/icons/common.svg';
 import { I18Namespace } from '@shared/config/i18n';
 import { ELanding } from '@shared/config/i18n/i18nTranslations';
 
@@ -11,92 +10,7 @@ export const useHeaderMenuData = () => {
 
   const headerCourseMenuData: ICourseNavigation = {
     title: 'Курсы',
-    items: [
-      {
-        title: 'Frontend',
-        items: [
-          {
-            section: 'Общее',
-            logo: commonIcon,
-            items: [
-              {
-                title: 'Основы разработки',
-                link: '',
-              },
-              {
-                title: 'Основы Git',
-                link: '',
-              },
-              {
-                title: 'HTML и CSS',
-                link: '',
-              },
-              {
-                title: 'CSS Flexbox',
-                link: '',
-              },
-              {
-                title: 'Основы JavaScript',
-                link: '',
-              },
-              {
-                title: 'Продвинутый JavaScript',
-                link: '',
-              },
-              {
-                title: 'TypeScript с нуля',
-                link: '',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: 'Backend',
-        items: [
-          {
-            section: 'Общее',
-            logo: commonIcon,
-            items: [
-              {
-                title: 'Основы разработки',
-                link: '',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: 'DevOps',
-        items: [
-          {
-            section: 'Общее',
-            logo: commonIcon,
-            items: [
-              {
-                title: 'Основы разработки',
-                link: '',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: 'Mobile',
-        items: [
-          {
-            section: 'Общее',
-            logo: commonIcon,
-            items: [
-              {
-                title: 'Основы разработки',
-                link: '',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    items: [],
   };
 
   const navMenuData: INavigation[] = [

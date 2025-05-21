@@ -1,6 +1,6 @@
 import KinescopePlayer from '@kinescope/react-kinescope-player';
 import { Check, X } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { CommentList } from '@widgets/lesson/ui/LessonComment';
 import { AddComment } from '@widgets/lesson/ui/LessonComment/ui/AddComment/AddComment';
@@ -15,16 +15,19 @@ import styles from './LessonPage.module.scss';
 const LessonPage = () => {
   const { lessonBySlug, lessonCompleteMutate, isLoading } = useLesson();
   const playerRef = useRef<KinescopePlayer | null>(null);
-  const [isCompleted, setIsCompleted] = useState<boolean>(false);
+  // const [isCompleted, setIsCompleted] = useState<boolean>(false);
+
+  // const isCompleted = lessonBySlug?.userProgress.some((progress) => progress.isCompleted) ?? false;
+  const isCompleted = lessonBySlug?.userProgress[0].isCompleted ?? false;
 
   const handleComplete = async () => {
     lessonCompleteMutate({ isCompleted: true, lessonId: lessonBySlug?.id ?? '' });
-    setIsCompleted(true);
+    // setIsCompleted(true);
   };
 
   const handleCancel = async () => {
     lessonCompleteMutate({ isCompleted: false, lessonId: lessonBySlug?.id ?? '' });
-    setIsCompleted(false);
+    // setIsCompleted(false);
   };
 
   return (

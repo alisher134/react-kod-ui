@@ -17,6 +17,7 @@ export const AddComment = () => {
     register: registerInput,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ICommentBody>({
     mode: 'onSubmit',
     resolver: zodResolver(CommentSchema),
@@ -24,6 +25,7 @@ export const AddComment = () => {
 
   const onSubmit: SubmitHandler<ICommentBody> = (data) => {
     lessonComment(data);
+    reset();
   };
 
   return (
