@@ -18,7 +18,7 @@ const LessonPage = () => {
   // const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
   // const isCompleted = lessonBySlug?.userProgress.some((progress) => progress.isCompleted) ?? false;
-  const isCompleted = lessonBySlug?.userProgress[0].isCompleted ?? false;
+  const isCompleted = lessonBySlug?.userProgress[0]?.isCompleted ?? false;
 
   const handleComplete = async () => {
     lessonCompleteMutate({ isCompleted: true, lessonId: lessonBySlug?.id ?? '' });
