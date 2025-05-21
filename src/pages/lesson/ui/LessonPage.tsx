@@ -14,11 +14,14 @@ import styles from './LessonPage.module.scss';
 
 const LessonPage = () => {
   const { lessonBySlug, lessonCompleteMutate, isLoading } = useLesson();
+
   const playerRef = useRef<KinescopePlayer | null>(null);
   // const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
   // const isCompleted = lessonBySlug?.userProgress.some((progress) => progress.isCompleted) ?? false;
-  const isCompleted = lessonBySlug?.userProgress[0]?.isCompleted ?? false;
+  if (!lessonBySlug) return null;
+
+  const isCompleted = lessonBySlug?.userProgress?.[0]?.isCompleted ?? false;
 
   const handleComplete = async () => {
     lessonCompleteMutate({ isCompleted: true, lessonId: lessonBySlug?.id ?? '' });
